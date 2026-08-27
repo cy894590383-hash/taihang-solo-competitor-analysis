@@ -1802,7 +1802,7 @@
           <div class="accent-line"></div>
           <h1 id="report-title">泡漫与漫枢<br><span>竞品逆向分析</span></h1>
           <p class="hero-subtitle">从页面功能比较，进一步进入用户决策、对象状态、返工半径与交付机制。目标不是复制两款产品，而是判断太行Solo 1.0 应如何更早发现错误、更小范围修复错误。</p>
-          <p class="hero-meta">内部领导汇报 · 分析范围：完整剧本 → 分集 → 资产 → 分镜 → 生成 → 带声音视频素材</p>
+          <p class="hero-meta">内部汇报 · 分析范围：完整剧本 → 分集 → 资产 → 分镜 → 生成 → 分段视频导出</p>
         </div>
         <aside class="hero-thesis">
           <div class="eyebrow">核心命题</div>
@@ -1835,7 +1835,7 @@
                 <tr><td><strong>漫枢以项目资产与分镜表组织编辑</strong></td><td>主要控制“在哪个粒度修改、如何保留历史”</td><td>分镜级编辑，片段级生成、计费、重试和采用</td><td><span class="badge primary">A 实测</span> <span class="badge">B 手册</span></td></tr>
                 <tr><td><strong>泡漫手动拆分后当前路径无法切回自动</strong></td><td>强流程如果不可逆，会把纠错变成新的锁定</td><td>分集版本化；允许重新解析、比较并选择采用版本</td><td><button class="evidence-link" data-evidence-id="E01">E01 · A 实测</button></td></tr>
                 <tr><td><strong>漫枢缺资产时需返回资产步骤处理</strong></td><td>专业能力如果跨页接力，会增加切换和漏选风险</td><td>当前分镜原地完成依赖生成、选择、绑定与回写</td><td><button class="evidence-link" data-evidence-id="E06">E06 · A 实测</button></td></tr>
-                <tr><td><strong>生成之后仍需声音、采用版本和持久化文件</strong></td><td>调用成功、可预览、可交付是三个不同状态</td><td>交付必须同时通过声音、采用版本和自有对象存储</td><td><span class="badge">A/B 证据</span> <span class="badge primary">Solo决策</span></td></tr>
+                <tr><td><strong>生成之后仍需明确采用版本和可下载文件</strong></td><td>调用成功、可预览、可导出是三个不同状态</td><td>1.0交付以采用的分段视频可下载为准</td><td><span class="badge">A/B 证据</span> <span class="badge primary">Solo决策</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -1850,7 +1850,7 @@
 
         <div class="northstar-callout">
           <div class="metric-value">1</div>
-          <div><strong>候选北极星：单位人日交付的“已采用、带声音视频片段数”</strong><p>配套观察周期、首轮采用率、平均重新生成次数、返工半径和最终采用片段成本。</p></div>
+          <div><strong>候选北极星：单位人日交付后期的“可用分段视频数”</strong><p>配套观察周期、首轮可用率、平均重新生成次数、返工半径和最终可用片段成本。</p></div>
           <span class="badge pending">当前基线待测</span>
         </div>
       </div>
@@ -1877,7 +1877,7 @@
           </div>
           <div class="value-chain solo">
             <div class="chain-brand"><strong>太行Solo 1.0</strong><span>内部稳定生产闭环</span></div>
-            <div class="chain-flow"><div class="chain-node">完整剧本</div><div class="chain-node">可逆结构化</div><div class="chain-node">稳定资产 / 分镜</div><div class="chain-node">版本化生成</div><div class="chain-node">声音素材包</div></div>
+            <div class="chain-flow"><div class="chain-node">完整剧本</div><div class="chain-node">可逆结构化</div><div class="chain-node">稳定资产 / 分镜</div><div class="chain-node">版本化生成</div><div class="chain-node">分段视频导出</div></div>
             <p class="chain-note">生成、复用、重新生成与成本数据自动回流，逐步形成内部生产壁垒。</p>
           </div>
         </div>
@@ -1887,9 +1887,9 @@
             <div class="section-label">战略部署四层</div>
             <div class="strategy-levels">
               <div class="strategy-level"><b>愿景</b><p>让漫剧生产形成可复制的系统能力，而不是依赖少数熟练抽卡师。</p><span class="badge inference">战略假设</span></div>
-              <div class="strategy-level"><b>战略意图</b><p>内部团队稳定完成“完整剧本 → 可交付带声音素材”，并减少全链路返工。</p><span class="badge primary">已确认</span></div>
+              <div class="strategy-level"><b>战略意图</b><p>内部团队稳定完成“完整剧本 → 可导出分段视频”，并减少全链路返工。</p><span class="badge primary">已确认</span></div>
               <div class="strategy-level"><b>产品举措</b><p>提高单位人日采用片段数，缩短首个采用结果时间，降低最终采用片段成本。</p><span class="badge pending">阈值待测</span></div>
-              <div class="strategy-level"><b>产品选项</b><p>可逆分集、稳定资产、依赖闭环、并发、失败隔离、版本采用、声音与对象存储校验。</p><span class="badge primary">进入验证</span></div>
+              <div class="strategy-level"><b>产品选项</b><p>可逆分集、稳定资产、依赖闭环、并发、失败隔离、版本采用与分段视频导出。</p><span class="badge primary">进入验证</span></div>
             </div>
           </div>
           <aside class="scope-note">
@@ -1931,8 +1931,8 @@
               <tbody>
                 <tr><td>泡漫控制</td><td><strong>预设约束</strong>从完整剧本进入标准生产</td><td><strong>独立确认闸门</strong>先形成分集</td><td><strong>生产就绪</strong>角色、造型、声音关系清晰</td><td><strong>集中上下文</strong>参考与双提示词靠近生成</td><td><strong>批量优先</strong>系统承担初稿生产</td><td><strong>记录与复用</strong>保存片段生成状态、参数和结果</td><td><strong>配音/导出可见</strong>素材交付链较连贯</td></tr>
                 <tr><td>漫枢控制</td><td><strong>起点自由</strong>可输入或跳过剧本</td><td><strong>片段边界</strong>更多依赖用户正确输入</td><td><strong>项目资产池</strong>生成/上传/筛选/绑定</td><td><strong>专业分镜</strong>自动拆分、编辑、@召回</td><td><strong>模式与多结果</strong>逐分镜深度控制</td><td><strong>记录与复用</strong>保存分镜生成状态、参数和结果</td><td><strong>视频拼接</strong>声音与后期仍待验证</td></tr>
-                <tr><td>主要断点</td><td>两者都需用户理解项目约束</td><td>泡漫模式可逆性风险；漫枢上游护栏弱</td><td>别名/一致性错误会进入下游</td><td>漫枢缺资产需跨步骤回退</td><td>供应商失败恢复均未同口径验证</td><td>重生成以片段或分镜为最小单元，暂未见结果内部局部调整</td><td>生成成功不等于声音、版本和文件可交付</td></tr>
-                <tr><td>Solo机制</td><td>保留完整源剧本与项目约束</td><td>代码分集、人工保护、解析版本采用</td><td>稳定标识、采用版本、分层状态</td><td>当前分镜原地补齐全部依赖</td><td>任务组、生成任务、结果版本与失败隔离</td><td>记录状态、参数和结果，支持查看与复用</td><td>声音、采用、对象存储三重交付闸门</td></tr>
+                <tr><td>主要断点</td><td>两者都需用户理解项目约束</td><td>泡漫模式可逆性风险；漫枢上游护栏弱</td><td>别名/一致性错误会进入下游</td><td>漫枢缺资产需跨步骤回退</td><td>供应商失败恢复均未同口径验证</td><td>重生成以片段或分镜为最小单元，暂未见结果内部局部调整</td><td>生成成功不等于采用版本可下载</td></tr>
+                <tr><td>Solo机制</td><td>保留完整源剧本与项目约束</td><td>代码分集、人工保护、解析版本采用</td><td>稳定标识、采用版本、分层状态</td><td>当前分镜原地补齐全部依赖</td><td>任务组、生成任务、结果版本与失败隔离</td><td>记录状态、参数和结果，支持查看与复用</td><td>导出可用及部分可用的分段视频给后期</td></tr>
               </tbody>
             </table>
           </div>
@@ -2018,7 +2018,7 @@
           <div class="mechanism-node"><span>02</span><strong>两层生产单元</strong><small>分镜编辑，片段生成与采用</small></div>
           <div class="mechanism-node"><span>03</span><strong>稳定资产上下文</strong><small>稳定标识、采用版本、依赖状态</small></div>
           <div class="mechanism-node"><span>04</span><strong>任务与结果版本</strong><small>任务组、生成任务、结果、失败隔离</small></div>
-          <div class="mechanism-node"><span>05</span><strong>交付就绪状态</strong><small>声音、采用、对象存储同时通过</small></div>
+          <div class="mechanism-node"><span>05</span><strong>分段视频交付</strong><small>可用与部分可用版本交给后期</small></div>
         </div>
 
         <div class="table-shell">
@@ -2030,7 +2030,7 @@
                 <tr><td><strong>两层生产单元</strong></td><td>泡漫以片段组织生产；漫枢以分镜表提供控制</td><td>大单元牺牲局部控制；小单元增加任务成本</td><td>分镜粒度编辑；片段粒度生成、计费、重试和采用</td><td>批量得到初稿，返工限制在单片段</td><td>每个采用片段的修改数、平均重新生成范围</td></tr>
                 <tr><td><strong>稳定资产上下文</strong></td><td>两款均有项目资产和显式引用；资产状态展示深度不同</td><td>名称引用、未采用资产与不稳定多视图会传递漂移</td><td>角色、造型、音色分层；固定身份锚点；召回显示生成/采用/复核状态</td><td>用户不从空提示词开始，也无需离开当前分镜找资产</td><td>资产一次采用率、首次生成可用率、依赖闭环时长</td></tr>
                 <tr><td><strong>任务与结果版本</strong></td><td>两款均保留生成历史，并支持按片段或分镜重新生成</td><td>不可分割任务会整批失败、覆盖结果和重复扣费</td><td><code>output_count</code>拆成任务组与独立生成任务；保存状态、参数和结果；失败单独重试；转存对象存储</td><td>先批量跑，再查看、复用或重新生成最小单元，不必整批重跑</td><td>失败隔离率、幂等拦截率、最终采用结果成本</td></tr>
-                <tr><td><strong>交付就绪状态</strong></td><td>泡漫配音/导出更可见；漫枢已验证视频拼接，声音未验证</td><td>调用成功、可预览和可交付容易混为一谈</td><td>无声仅预览；临时链接未转存不可交付；只导出采用版本</td><td>不再下载后才发现声音、链接或版本问题</td><td>交付通过率、音轨问题率、对象存储成功率、导出后返工率</td></tr>
+                <tr><td><strong>分段视频交付</strong></td><td>泡漫支持分段导出；漫枢已验证视频下载与拼接</td><td>调用成功、可预览和可交给后期容易混为一谈</td><td>结果标记为可用、部分可用或不可用；前两类可导出，不要求音频和整片合成</td><td>抽卡师把有后期价值的视频片段完整交付，不因局部瑕疵丢失可用素材</td><td>分段视频导出成功率、可用标记准确率、后期实际使用率</td></tr>
               </tbody>
             </table>
           </div>
@@ -2065,7 +2065,7 @@
 
           <figure class="evidence-card" data-id="E03" data-title="泡漫｜角色卡、造型、视图与音色" data-proof="角色、造型、参考视图与声音关系更接近下游生产就绪。" data-limit="非同模型控制实验，不能证明底层模型更强。" data-solo="角色、造型、参考视图、音色分层保存。">
             <button class="evidence-media" type="button" aria-label="查看E03截图"><img src="assets/evidence/E03.jpg" alt="泡漫角色卡与音色截图"><span class="evidence-placeholder"><strong>E03</strong><span>角色卡、造型与音色<br>截图待补</span></span></button>
-            <figcaption class="evidence-copy"><header><h3>泡漫｜角色卡、造型与音色</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>角色、造型数量、人物/服装视图、声音绑定</span></div><div class="evidence-field"><b>能证明</b><span>资产组织更接近生产就绪</span></div><div class="evidence-field"><b>不能证明</b><span>非同模型实验，不能比较模型优劣</span></div><div class="evidence-field"><b>Solo</b><span>角色、造型、视图和声音分层</span></div></div></figcaption>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜角色卡、造型与音色</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>角色、造型数量、人物/服装视图、声音绑定</span></div><div class="evidence-field"><b>能证明</b><span>资产组织更接近生产就绪</span></div><div class="evidence-field"><b>不能证明</b><span>非同模型实验，不能比较模型优劣</span></div><div class="evidence-field"><b>Solo</b><span>1.0先做好角色、造型与参考视图</span></div></div></figcaption>
           </figure>
 
           <figure class="evidence-card" data-id="E04" data-title="漫枢｜角色多视图与音色" data-proof="项目资产和角色音色可见；样本存在人工筛选负担。" data-limit="不能由单组样本归纳整体人物质量。" data-solo="候选池、采用版本与一致性检查。">
@@ -2083,9 +2083,9 @@
             <figcaption class="evidence-copy"><header><h3>漫枢｜分镜编辑与@召回</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>参考、资产状态、素材分类、生成入口</span></div><div class="evidence-field"><b>能证明</b><span>分类召回显式；当前样本有跨步骤回退</span></div><div class="evidence-field"><b>不能证明</b><span>不能外推所有项目都必然回退</span></div><div class="evidence-field"><b>Solo</b><span>当前分镜原地完成依赖闭环</span></div></div></figcaption>
           </figure>
 
-          <figure class="evidence-card" data-id="E07" data-title="泡漫｜视频与独立音轨导出" data-proof="导出提供视频片段、独立配音音轨和视频+音频混合包。" data-limit="不能仅凭导出选项证明音轨完整、映射正确或已通过强校验。" data-solo="声音不独立成页，但必须进入交付闸门。">
+          <figure class="evidence-card" data-id="E07" data-title="泡漫｜视频与独立音轨导出" data-proof="导出提供视频片段、独立配音音轨和视频+音频混合包。" data-limit="不能仅凭导出选项证明音轨完整、映射正确或已通过强校验。" data-solo="1.0只借鉴分段视频导出，不纳入音频交付。">
             <button class="evidence-media" type="button" aria-label="查看E07截图"><img src="assets/evidence/E07.jpg" alt="泡漫视频与独立音轨导出截图"><span class="evidence-placeholder"><strong>E07</strong><span>视频与独立音轨导出<br>截图待补</span></span></button>
-            <figcaption class="evidence-copy"><header><h3>泡漫｜视频与独立音轨导出</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>分集/片段范围、视频、独立音轨、混合包</span></div><div class="evidence-field"><b>能证明</b><span>声音素材与视频可按不同交付包导出</span></div><div class="evidence-field"><b>不能证明</b><span>音轨完整、映射正确或已通过强校验</span></div><div class="evidence-field"><b>Solo</b><span>声音进入交付状态，不独立成页</span></div></div></figcaption>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜视频与独立音轨导出</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>分集/片段范围、视频、独立音轨、混合包</span></div><div class="evidence-field"><b>能证明</b><span>视频片段可按范围独立导出</span></div><div class="evidence-field"><b>不能证明</b><span>音轨完整、映射正确或已通过强校验</span></div><div class="evidence-field"><b>Solo</b><span>1.0只借鉴分段视频导出</span></div></div></figcaption>
           </figure>
 
           <figure class="evidence-card" data-id="E08" data-title="漫枢｜分镜列表、批量与成片入口" data-proof="分镜任务按列表组织，并提供批量生成、批量下载、预览与一键成片入口。" data-limit="不能仅凭入口证明批量任务的失败隔离、恢复机制或最终成片质量。" data-solo="分镜状态、批量动作范围与任务结果必须显式。">
@@ -2093,9 +2093,9 @@
             <figcaption class="evidence-copy"><header><h3>漫枢｜分镜列表、批量与成片入口</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>分镜任务、生成参数、批量生成/下载、成片入口</span></div><div class="evidence-field"><b>能证明</b><span>列表级生产控制和成片入口可见</span></div><div class="evidence-field"><b>不能证明</b><span>批量失败隔离、恢复机制与成片质量</span></div><div class="evidence-field"><b>Solo</b><span>任务状态、操作范围与结果显式对应</span></div></div></figcaption>
           </figure>
 
-          <figure class="evidence-card is-right" data-id="E09" data-title="漫枢｜一键成片预览与下载" data-proof="所选分镜进入完整视频预览，页面提供下载与再次成片入口。" data-limit="不能由当前页面确认配音、字幕、背景音乐、转场编辑或音轨校验能力。" data-solo="采用版本、合成结果、声音状态与交付状态分开建模。">
+          <figure class="evidence-card is-right" data-id="E09" data-title="漫枢｜一键成片预览与下载" data-proof="所选分镜进入完整视频预览，页面提供下载与再次成片入口。" data-limit="不能由当前页面确认配音、字幕、背景音乐、转场编辑或音轨校验能力。" data-solo="整片合成由后期负责，1.0只交付分段视频。">
             <button class="evidence-media" type="button" aria-label="查看E09截图"><img src="assets/evidence/E09.jpg" alt="漫枢一键成片预览与下载截图"><span class="evidence-placeholder"><strong>E09</strong><span>一键成片预览与下载<br>截图待补</span></span></button>
-            <figcaption class="evidence-copy"><header><h3>漫枢｜一键成片预览与下载</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>完整视频预览、分镜条、下载与再次成片</span></div><div class="evidence-field"><b>能证明</b><span>所选分镜可进入整片预览与下载</span></div><div class="evidence-field"><b>不能证明</b><span>配音、字幕、背景音乐、转场或音轨校验</span></div><div class="evidence-field"><b>Solo</b><span>采用、合成、声音与交付状态分层</span></div></div></figcaption>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜一键成片预览与下载</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>完整视频预览、分镜条、下载与再次成片</span></div><div class="evidence-field"><b>能证明</b><span>所选分镜可进入整片预览与下载</span></div><div class="evidence-field"><b>不能证明</b><span>配音、字幕、背景音乐、转场或音轨校验</span></div><div class="evidence-field"><b>Solo</b><span>整片合成由后期负责，1.0只交付分段视频</span></div></div></figcaption>
           </figure>
         </div>
 
@@ -2126,26 +2126,26 @@
               <thead><tr><th>故事层级</th><th>1 项目设定</th><th>2 分集确认</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
               <tbody>
                 <tr data-map-level="context"><td>用户活动</td><td>建立生产项目</td><td>全文变成可生产分集</td><td>准备一致、可引用资产</td><td>剧情变成可生成任务</td><td>快速取得候选结果</td><td>查看记录并复用结果</td><td>交给人工后期</td></tr>
-                <tr data-map-level="context"><td>核心任务</td><td>导入完整剧本并保留来源</td><td>检查标题、边界与原文</td><td>合并别名，确认角色/造型/声音</td><td>校对片段、分镜、双提示词和依赖</td><td>设置已验证模型并并发提交</td><td>查看状态、参数和结果，复用或按最小单元重生成</td><td>检查声音与文件，导出采用素材</td></tr>
-                <tr data-map-level="p0"><td>P0 最小可运行骨架</td><td>完整剧本导入；源文本只读保存</td><td>代码识别；人工修正；重新解析；采用版本</td><td>Dify抽取归一；核心资产生图；稳定标识；采用参考；声音绑定</td><td>片段/分镜；双提示词；依赖清单；分层@；原地补齐；模型能力校验</td><td>10段异步并发；<code>output_count</code>；独立生成任务；状态；对象存储转存</td><td>保存每次状态、参数和结果；查看与复用；最小单元重生成；幂等</td><td>声音映射与音轨校验；只导出采用结果；干净素材包</td></tr>
-                <tr data-map-level="p1"><td>P1 稳定与效率</td><td>增量追加剧集、项目模板</td><td>边界差异对比、下游影响预览</td><td>自动一致性检查、更细声音/参考管理</td><td>连续性提示、尾帧/参考约束、自动质检</td><td>任务优先级与批次管理</td><td>历史筛选、结果对比、成本看板</td><td>基础字幕、片段合并、质检报告</td></tr>
+                <tr data-map-level="context"><td>核心任务</td><td>导入完整剧本并保留来源</td><td>检查标题、边界与原文</td><td>合并别名，确认角色与造型</td><td>校对片段、分镜、双提示词和依赖</td><td>设置已验证模型并并发提交</td><td>查看状态、参数和结果，复用或按最小单元重生成</td><td>标记可用程度并导出给后期</td></tr>
+                <tr data-map-level="p0"><td>P0 最小可运行骨架</td><td>完整剧本导入；源文本只读保存</td><td>代码识别；人工修正；重新解析；采用版本</td><td>Dify抽取归一；核心资产生图；稳定标识；采用参考</td><td>片段/分镜；双提示词；依赖清单；分层@；原地补齐；模型能力校验</td><td>10段异步并发；<code>output_count</code>；独立生成任务；状态；对象存储转存</td><td>保存每次状态、参数和结果；查看与复用；最小单元重生成；幂等</td><td>可用/部分可用/不可用标记；前两类分段视频导出</td></tr>
+                <tr data-map-level="p1"><td>P1 稳定与效率</td><td>增量追加剧集、项目模板</td><td>边界差异对比、下游影响预览</td><td>自动一致性检查、更细参考管理</td><td>连续性提示、尾帧/参考约束、自动质检</td><td>任务优先级与批次管理</td><td>历史筛选、结果对比、成本看板</td><td>批量打包、交付清单、质检报告</td></tr>
                 <tr data-map-level="p2"><td>P2 规模与差异化</td><td>多项目模板与权限</td><td>剧本质量分析、多智能体审阅</td><td>自动资产路由与跨项目复用</td><td>自由画布、专业时间线</td><td>自动模型路由、多宫格降本</td><td>团队人效与策略学习</td><td>国内外双版本、一键海外交付</td></tr>
-                <tr data-map-level="gate"><td>P0完成闸门</td><td>原文无丢失</td><td>人工可纠错且保留版本</td><td>核心资产与声音可追溯</td><td>任一集不改库即可进入生成</td><td>并发、多结果、失败隔离成立</td><td>历史完整可复用，重生成不重复任务/计费</td><td>带声音、持久化、采用素材可下载</td></tr>
+                <tr data-map-level="gate"><td>P0完成闸门</td><td>原文无丢失</td><td>人工可纠错且保留版本</td><td>核心资产可追溯</td><td>任一集不改库即可进入生成</td><td>并发、多结果、失败隔离成立</td><td>历史完整可复用，重生成不重复任务/计费</td><td>可用与部分可用分段视频可导出</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <blockquote class="walking-story">作为太行Solo内部制作人，我导入完整剧本，修正分集；确认角色、造型、表演风格、声音和参考图；校对片段、分镜、双提示词与依赖；批量提交候选视频；只重试失败或不可用片段；最后导出仅含已采用版本、带可用声音的素材包。</blockquote>
+        <blockquote class="walking-story">作为太行Solo抽卡师，我导入完整剧本，修正分集；确认角色、造型、表演风格和参考图；校对片段、分镜、双提示词与依赖；批量提交候选视频；标记可用、部分可用或不可用；最后把前两类分段视频交给后期。</blockquote>
 
         <div class="acceptance-grid" aria-label="1.0七项技术护栏">
           <div class="acceptance-gate"><b>01</b><strong>三份异构剧本</strong><span>可修正，不丢原文</span></div>
           <div class="acceptance-gate"><b>02</b><strong>任一集全链直通</strong><span>不改数据库或重部署</span></div>
-          <div class="acceptance-gate"><b>03</b><strong>可用对白声音</strong><span>无声不得标记成功</span></div>
+          <div class="acceptance-gate"><b>03</b><strong>分段视频可预览</strong><span>结果可查看并选择采用</span></div>
           <div class="acceptance-gate"><b>04</b><strong>10段并发</strong><span>多结果，失败不扩散</span></div>
           <div class="acceptance-gate"><b>05</b><strong>重试幂等</strong><span>不重复任务或计费</span></div>
           <div class="acceptance-gate"><b>06</b><strong>自有对象存储</strong><span>临时地址自动转存</span></div>
-          <div class="acceptance-gate"><b>07</b><strong>采用版导出</strong><span>素材包只含采用结果</span></div>
+          <div class="acceptance-gate"><b>07</b><strong>分段视频交付</strong><span>可用与部分可用结果可导出</span></div>
         </div>
       </div>
     </section>
@@ -2163,12 +2163,12 @@
             <table class="lane-matrix">
               <thead><tr><th>责任泳道</th><th>1 导入</th><th>2 分集</th><th>3 资产</th><th>4 分镜</th><th>5 生成</th><th>6 历史 / 复用</th><th>7 导出</th></tr></thead>
               <tbody>
-                <tr><td>内部制作人</td><td>选择完整剧本</td><td>校正边界并采用版本</td><td>合并别名，确认造型/声音/参考</td><td>校对分镜、提示词、依赖与模型</td><td>提交批次并观察状态</td><td>看历史、复用结果或按最小单元重生成</td><td>确认声音与素材包</td></tr>
-                <tr><td>前端</td><td>上传、显示原文与解析状态</td><td>差异修订、重解析、版本选择</td><td>展示分类资产、状态与采用操作</td><td>当前上下文展示依赖与分层召回</td><td>展示预估、任务组和生成任务状态</td><td>保留历史并限制重复提交</td><td>展示交付闸门和下载结果</td></tr>
-                <tr><td>业务后端</td><td>保存源剧本与项目状态</td><td>代码解析；保存解析版本/分集</td><td>保存稳定标识、关系、采用版本、声音映射</td><td>保存片段/分镜/提示词版本/资产引用</td><td>异步提交/轮询；幂等；成本；权限</td><td>保存状态、参数和结果；按最小单元重生成；幂等</td><td>校验采用/声音/对象存储；生成清单</td></tr>
+                <tr><td>抽卡师</td><td>选择完整剧本</td><td>校正边界并采用版本</td><td>合并别名，确认造型与参考</td><td>校对分镜、提示词、依赖与模型</td><td>提交批次并观察状态</td><td>看历史、复用结果或按最小单元重生成</td><td>标记可用程度并导出分段视频</td></tr>
+                <tr><td>前端</td><td>上传、显示原文与解析状态</td><td>差异修订、重解析、版本选择</td><td>展示分类资产、状态与采用操作</td><td>当前上下文展示依赖与分层召回</td><td>展示预估、任务组和生成任务状态</td><td>保留历史并限制重复提交</td><td>标记可用程度并下载分段视频</td></tr>
+                <tr><td>业务后端</td><td>保存源剧本与项目状态</td><td>代码解析；保存解析版本/分集</td><td>保存稳定标识、关系与采用版本</td><td>保存片段/分镜/提示词版本/资产引用</td><td>异步提交/轮询；幂等；成本；权限</td><td>保存状态、参数和结果；按最小单元重生成；幂等</td><td>保存可用程度并提供分段视频下载</td></tr>
                 <tr><td>Dify 工作流</td><td>不参与分集</td><td>从已确认分集后开始</td><td>资产抽取、别名建议、提示词编译、结构修复</td><td>生成结构、依赖清单、双提示词；编译@上下文</td><td>不等待分钟级任务，不记账</td><td>不写生成历史与复用状态</td><td>不决定可交付状态</td></tr>
-                <tr><td>模型 / 供应商</td><td>无</td><td>无</td><td>按适配层调用图片/声音能力</td><td>接收编译后的结构化上下文</td><td>返回任务状态、临时链接和错误</td><td>只重跑指定生成任务</td><td>不直接成为最终下载源</td></tr>
-                <tr><td>对象存储 / 交付层</td><td>保存源文件</td><td>保存版本快照</td><td>保存采用资产媒体</td><td>保存提示词与依赖快照</td><td>把临时结果持久化</td><td>保留历史，不覆盖采用版</td><td>组装只含采用结果的素材包</td></tr>
+                <tr><td>模型 / 供应商</td><td>无</td><td>无</td><td>按适配层调用图片与视频能力</td><td>接收编译后的结构化上下文</td><td>返回任务状态、临时链接和错误</td><td>只重跑指定生成任务</td><td>不直接成为最终下载源</td></tr>
+                <tr><td>对象存储 / 交付层</td><td>保存源文件</td><td>保存版本快照</td><td>保存采用资产媒体</td><td>保存提示词与依赖快照</td><td>把临时结果持久化</td><td>保留全部历史，不覆盖结果</td><td>打包可用与部分可用的分段视频及清单</td></tr>
               </tbody>
             </table>
           </div>
@@ -2186,7 +2186,6 @@
                 <tr><td><strong>分镜依赖缺失</strong></td><td><code>dependency_blocked</code></td><td>当前分镜原地生成、选择或绑定可用版本</td><td>提交生成后才报供应商错误</td></tr>
                 <tr><td><strong>生成超时 / 单任务失败</strong></td><td><code>job_failed / timeout</code></td><td>用原任务规格和幂等范围重试该任务</td><td>整批重跑或重复计费</td></tr>
                 <tr><td><strong>临时链接转存失败</strong></td><td><code>persist_failed</code></td><td>只重试文件转存，必要时重新拉取结果</td><td>把临时链接标记为可交付</td></tr>
-                <tr><td><strong>声音 / 音轨失败</strong></td><td><code>audio_not_ready</code></td><td>原生声音重试或最小语音合成兜底</td><td>把无声视频标记为成功交付</td></tr>
               </tbody>
             </table>
           </div>
@@ -2203,13 +2202,13 @@
         </header>
 
         <div class="outcome-tree">
-          <div class="northstar-node"><span>候选北极星 · 基线待测</span><strong>单位人日交付的“已采用、带声音视频片段数”</strong></div>
+          <div class="northstar-node"><span>候选北极星 · 基线待测</span><strong>单位人日交付后期的“可用分段视频数”</strong></div>
           <div class="driver-grid">
             <div class="driver"><b>周期</b><p>导入到首个已采用片段的时间</p></div>
             <div class="driver"><b>质量</b><p>首轮生成采用率、资产一次采用率</p></div>
             <div class="driver"><b>返工</b><p>平均重新生成次数、返工半径、补依赖往返</p></div>
             <div class="driver"><b>成本</b><p>每个最终采用片段的总生成成本</p></div>
-            <div class="driver"><b>交付</b><p>声音、对象存储、采用版本同时通过的比例</p></div>
+            <div class="driver"><b>交付</b><p>可用与部分可用分段视频成功导出的比例</p></div>
           </div>
           <div class="guardrail-row"><span>原文零丢失</span><span>不重复计费</span><span>单任务失败不扩散</span><span>无声结果不冒充交付</span></div>
         </div>
@@ -2228,8 +2227,8 @@
               <tbody>
                 <tr><td><strong>X0 基线</strong></td><td>产出、周期、采用率和成本没有统一口径</td><td>得到真实当前基线</td><td>选3份格式不同的真实剧本，记录现有人工流程节点时间、生成次数、采用数和交付问题</td><td>形成可比较基线；若无法测量，先补埋点与口径</td></tr>
                 <tr><td><strong>X1 任务原型</strong></td><td>关键对象和状态对制作人是否可理解未知</td><td>用户完成P0并知道错误在哪里修</td><td>完成分集修正、缺失资产闭环、单条重试、采用导出四个高风险任务</td><td>记录完成率、求助点、误操作和回退路径；阈值待确认</td></tr>
-                <tr><td><strong>X2 技术尖刺</strong></td><td>声音、并发、幂等、对象存储和失败恢复风险最高</td><td>一条默认模型链满足七条护栏</td><td>真实调用：10段并发、多结果、失败注入、重复点击、链接转存、声音校验</td><td>关键护栏无法成立则调整架构或范围，不进入全面页面开发</td></tr>
-                <tr><td><strong>X3 端到端试点</strong></td><td>技术可用不等于生产有价值</td><td>关键成效相对基线达到预设阈值</td><td>内部团队完成“导入 → 已采用带声音素材包”</td><td>比较北极星、质量、返工、成本与护栏，做继续/调整/停止判断</td></tr>
+                <tr><td><strong>X2 技术尖刺</strong></td><td>并发、幂等、对象存储和失败恢复风险最高</td><td>一条默认模型链满足七条护栏</td><td>真实调用：10段并发、多结果、失败注入、重复点击与链接转存</td><td>关键护栏无法成立则调整架构或范围，不进入全面页面开发</td></tr>
+                <tr><td><strong>X3 端到端试点</strong></td><td>技术可用不等于生产有价值</td><td>完整流程可稳定跑通</td><td>内部团队完成“导入 → 可用/部分可用分段视频交付后期”</td><td>比较后期实际使用率、质量、返工与成本，决定后续优化顺序</td></tr>
               </tbody>
             </table>
           </div>
@@ -2244,12 +2243,12 @@
         <header class="chapter-head">
           <div class="chapter-no">10</div>
           <div><div class="eyebrow">1.0执行结论</div><h2>先把完整生产流程跑通，不再增加前置确认</h2></div>
-          <p class="chapter-question"><strong>验证目标</strong><br>完整剧本能否稳定走到可交付的带声音视频素材？</p>
+          <p class="chapter-question"><strong>验证目标</strong><br>完整剧本能否稳定走到可交给后期使用的分段视频？</p>
         </header>
 
         <div class="decision-callout">
           <div class="metric-value">1.0</div>
-          <div><strong>唯一目标：跑通完整生产闭环</strong><p>完整剧本 → 分集 → 资产 → 分镜 → 生成 → 声音 → 素材交付</p></div>
+          <div><strong>唯一目标：跑通抽卡生产与后期交接</strong><p>完整剧本 → 分集 → 资产 → 分镜 → 生成 → 可用程度标记 → 分段视频交付后期</p></div>
           <span class="badge decision">已确认</span>
         </div>
 
@@ -2257,7 +2256,8 @@
           <div class="section-label">当前执行口径</div>
           <div class="confirmed-list">
             <div class="confirmed-row"><b>闭环范围</b><span>完整剧本到可交付素材，所有关键步骤可连续完成。</span></div>
-            <div class="confirmed-row"><b>完成标准</b><span>生成结果可查看历史、按片段或分镜重新生成，并完成声音与文件交付。</span></div>
+            <div class="confirmed-row"><b>完成标准</b><span>生成结果可查看历史、按片段或分镜重新生成；可用及部分可用的分段视频可导出给后期。</span></div>
+            <div class="confirmed-row"><b>后期边界</b><span>拼接、剪辑、节奏、背景音乐、字幕和整片合成由后期完成，不纳入太行Solo 1.0。</span></div>
             <div class="confirmed-row"><b>推进方式</b><span>用真实项目边跑边修；不另设硬性时间门槛，首版不扩展非闭环能力。</span></div>
           </div>
         </section>
