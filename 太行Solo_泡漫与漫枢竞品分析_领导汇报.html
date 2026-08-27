@@ -1835,7 +1835,7 @@
                 <tr><td><strong>漫枢以项目资产与分镜表组织编辑</strong></td><td>主要控制“在哪个粒度修改、如何保留历史”</td><td>分镜级编辑，片段级生成、计费、重试和采用</td><td><span class="badge primary">A 实测</span> <span class="badge">B 手册</span></td></tr>
                 <tr><td><strong>泡漫手动拆分后当前路径无法切回自动</strong></td><td>强流程如果不可逆，会把纠错变成新的锁定</td><td>分集版本化；允许重新解析、比较并选择采用版本</td><td><button class="evidence-link" data-evidence-id="E01">E01 · A 实测</button></td></tr>
                 <tr><td><strong>漫枢缺资产时需返回资产步骤处理</strong></td><td>专业能力如果跨页接力，会增加切换和漏选风险</td><td>当前分镜原地完成依赖生成、选择、绑定与回写</td><td><button class="evidence-link" data-evidence-id="E06">E06 · A 实测</button></td></tr>
-                <tr><td><strong>生成之后仍需明确采用版本和可下载文件</strong></td><td>调用成功、可预览、可导出是三个不同状态</td><td>1.0交付以采用的分段视频可下载为准</td><td><span class="badge">A/B 证据</span> <span class="badge primary">Solo决策</span></td></tr>
+                <tr><td><strong>生成历史中的视频需要支持独立导出</strong></td><td>调用成功、可预览、可导出是三个不同状态</td><td>用户选中的分段视频可直接下载</td><td><span class="badge">A/B 证据</span> <span class="badge primary">Solo决策</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -1850,7 +1850,7 @@
 
         <div class="northstar-callout">
           <div class="metric-value">1</div>
-          <div><strong>候选北极星：单位人日交付后期的“可用分段视频数”</strong><p>配套观察周期、首轮可用率、平均重新生成次数、返工半径和最终可用片段成本。</p></div>
+          <div><strong>候选北极星：单位人日导出的“分段视频数”</strong><p>配套观察周期、平均重新生成次数、返工半径和分段视频生成成本。</p></div>
           <span class="badge pending">当前基线待测</span>
         </div>
       </div>
@@ -1917,7 +1917,7 @@
 
         <div class="journey-tool">
           <div class="tool-toolbar">
-            <span class="tool-title">统一骨架：项目设定 → 分集/片段 → 资产就绪 → 分镜确认 → 批量生成 → 历史记录 → 素材交付</span>
+            <span class="tool-title">统一骨架：项目设定 → 分集/片段 → 资产就绪 → 分镜确认 → 批量生成 → 历史记录 → 分段视频导出</span>
             <div class="segment-control" role="group" aria-label="用户旅程视图">
               <button class="segment-btn active" type="button" data-journey="compare" aria-pressed="true">对照摘要</button>
               <button class="segment-btn" type="button" data-journey="pop" aria-pressed="false">泡漫旅程</button>
@@ -1927,19 +1927,19 @@
 
           <div class="matrix-scroll journey-view" data-journey-view="compare">
             <table class="journey-matrix">
-              <thead><tr><th>对照维度</th><th>1 项目设定</th><th>2 分集 / 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <thead><tr><th>对照维度</th><th>1 项目设定</th><th>2 分集 / 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 分段视频导出</th></tr></thead>
               <tbody>
                 <tr><td>泡漫控制</td><td><strong>预设约束</strong>从完整剧本进入标准生产</td><td><strong>独立确认闸门</strong>先形成分集</td><td><strong>生产就绪</strong>角色、造型、声音关系清晰</td><td><strong>集中上下文</strong>参考与双提示词靠近生成</td><td><strong>批量优先</strong>系统承担初稿生产</td><td><strong>记录与复用</strong>保存片段生成状态、参数和结果</td><td><strong>配音/导出可见</strong>素材交付链较连贯</td></tr>
                 <tr><td>漫枢控制</td><td><strong>起点自由</strong>可输入或跳过剧本</td><td><strong>片段边界</strong>更多依赖用户正确输入</td><td><strong>项目资产池</strong>生成/上传/筛选/绑定</td><td><strong>专业分镜</strong>自动拆分、编辑、@召回</td><td><strong>模式与多结果</strong>逐分镜深度控制</td><td><strong>记录与复用</strong>保存分镜生成状态、参数和结果</td><td><strong>视频拼接</strong>声音与后期仍待验证</td></tr>
-                <tr><td>主要断点</td><td>两者都需用户理解项目约束</td><td>泡漫模式可逆性风险；漫枢上游护栏弱</td><td>别名/一致性错误会进入下游</td><td>漫枢缺资产需跨步骤回退</td><td>供应商失败恢复均未同口径验证</td><td>重生成以片段或分镜为最小单元，暂未见结果内部局部调整</td><td>生成成功不等于采用版本可下载</td></tr>
-                <tr><td>Solo机制</td><td>保留完整源剧本与项目约束</td><td>代码分集、人工保护、解析版本采用</td><td>稳定标识、采用版本、分层状态</td><td>当前分镜原地补齐全部依赖</td><td>任务组、生成任务、结果版本与失败隔离</td><td>记录状态、参数和结果，支持查看与复用</td><td>导出可用及部分可用的分段视频给后期</td></tr>
+                <tr><td>主要断点</td><td>两者都需用户理解项目约束</td><td>泡漫模式可逆性风险；漫枢上游护栏弱</td><td>别名/一致性错误会进入下游</td><td>漫枢缺资产需跨步骤回退</td><td>供应商失败恢复均未同口径验证</td><td>重生成以片段或分镜为最小单元，暂未见结果内部局部调整</td><td>生成成功不等于用户所选视频可下载</td></tr>
+                <tr><td>Solo机制</td><td>保留完整源剧本与项目约束</td><td>代码分集、人工保护、解析版本采用</td><td>稳定标识、采用版本、分层状态</td><td>当前分镜原地补齐全部依赖</td><td>任务组、生成任务、结果版本与失败隔离</td><td>记录状态、参数和结果，支持查看与复用</td><td>从生成历史选择并导出分段视频</td></tr>
               </tbody>
             </table>
           </div>
 
           <div class="matrix-scroll journey-view" data-journey-view="pop" hidden>
             <table class="journey-matrix">
-              <thead><tr><th>泡漫旅程</th><th>1 项目设定</th><th>2 分集</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <thead><tr><th>泡漫旅程</th><th>1 项目设定</th><th>2 分集</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 分段视频导出</th></tr></thead>
               <tbody>
                 <tr><td>用户目标</td><td>建立可生产项目</td><td>剧集边界正确完整</td><td>参考资产可复用</td><td>生成任务可检查</td><td>快速取得候选</td><td>查看并复用生成记录</td><td>交给人工后期</td></tr>
                 <tr><td>用户动作</td><td>创建项目，导入完整剧本/分镜</td><td>检查、修订自动识别结果</td><td>修订别名，生成/导入资产，绑定音色</td><td>检查参考、双提示词与模型</td><td>批量或单条提交</td><td>查看历史；复用结果或按片段重新生成</td><td>配置/检查配音并导出</td></tr>
@@ -1954,7 +1954,7 @@
 
           <div class="matrix-scroll journey-view" data-journey-view="manyu" hidden>
             <table class="journey-matrix">
-              <thead><tr><th>漫枢旅程</th><th>1 项目设定</th><th>2 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <thead><tr><th>漫枢旅程</th><th>1 项目设定</th><th>2 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 分段视频导出</th></tr></thead>
               <tbody>
                 <tr><td>用户目标</td><td>选择专业生产起点</td><td>保存内容边界</td><td>建立项目资产池</td><td>逐镜头校对依赖</td><td>控制模式并取得候选</td><td>查看并复用生成记录</td><td>合并所选视频</td></tr>
                 <tr><td>用户动作</td><td>创建项目和片段，可输入或跳过剧本</td><td>创建片段并保存内容</td><td>提取/增补，批量或单项生成/上传，配置音色</td><td>自动拆分后逐条编辑、插入、@召回</td><td>选参考/首帧/首尾帧、模型与数量</td><td>查看历史；复用结果或按分镜重新生成</td><td>选择分镜视频并一键合成</td></tr>
@@ -2018,7 +2018,7 @@
           <div class="mechanism-node"><span>02</span><strong>两层生产单元</strong><small>分镜编辑，片段生成与采用</small></div>
           <div class="mechanism-node"><span>03</span><strong>稳定资产上下文</strong><small>稳定标识、采用版本、依赖状态</small></div>
           <div class="mechanism-node"><span>04</span><strong>任务与结果版本</strong><small>任务组、生成任务、结果、失败隔离</small></div>
-          <div class="mechanism-node"><span>05</span><strong>分段视频交付</strong><small>可用与部分可用版本交给后期</small></div>
+          <div class="mechanism-node"><span>05</span><strong>分段视频导出</strong><small>从生成历史选择视频并导出</small></div>
         </div>
 
         <div class="table-shell">
@@ -2030,7 +2030,7 @@
                 <tr><td><strong>两层生产单元</strong></td><td>泡漫以片段组织生产；漫枢以分镜表提供控制</td><td>大单元牺牲局部控制；小单元增加任务成本</td><td>分镜粒度编辑；片段粒度生成、计费、重试和采用</td><td>批量得到初稿，返工限制在单片段</td><td>每个采用片段的修改数、平均重新生成范围</td></tr>
                 <tr><td><strong>稳定资产上下文</strong></td><td>两款均有项目资产和显式引用；资产状态展示深度不同</td><td>名称引用、未采用资产与不稳定多视图会传递漂移</td><td>角色、造型、音色分层；固定身份锚点；召回显示生成/采用/复核状态</td><td>用户不从空提示词开始，也无需离开当前分镜找资产</td><td>资产一次采用率、首次生成可用率、依赖闭环时长</td></tr>
                 <tr><td><strong>任务与结果版本</strong></td><td>两款均保留生成历史，并支持按片段或分镜重新生成</td><td>不可分割任务会整批失败、覆盖结果和重复扣费</td><td><code>output_count</code>拆成任务组与独立生成任务；保存状态、参数和结果；失败单独重试；转存对象存储</td><td>先批量跑，再查看、复用或重新生成最小单元，不必整批重跑</td><td>失败隔离率、幂等拦截率、最终采用结果成本</td></tr>
-                <tr><td><strong>分段视频交付</strong></td><td>泡漫支持分段导出；漫枢已验证视频下载与拼接</td><td>调用成功、可预览和可交给后期容易混为一谈</td><td>结果标记为可用、部分可用或不可用；前两类可导出，不要求音频和整片合成</td><td>抽卡师把有后期价值的视频片段完整交付，不因局部瑕疵丢失可用素材</td><td>分段视频导出成功率、可用标记准确率、后期实际使用率</td></tr>
+                <tr><td><strong>分段视频导出</strong></td><td>泡漫支持分段导出；漫枢已验证视频下载与拼接</td><td>调用成功、可预览和可下载容易混为一谈</td><td>用户从生成历史自行选择视频并导出；平台不判断可用性，不要求音频和整片合成</td><td>抽卡师按自己的判断选择视频，直接交给后期继续处理</td><td>分段视频导出成功率、导出耗时、导出失败率</td></tr>
               </tbody>
             </table>
           </div>
@@ -2123,29 +2123,29 @@
           </div>
           <div class="matrix-scroll">
             <table class="story-map">
-              <thead><tr><th>故事层级</th><th>1 项目设定</th><th>2 分集确认</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <thead><tr><th>故事层级</th><th>1 项目设定</th><th>2 分集确认</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 分段视频导出</th></tr></thead>
               <tbody>
                 <tr data-map-level="context"><td>用户活动</td><td>建立生产项目</td><td>全文变成可生产分集</td><td>准备一致、可引用资产</td><td>剧情变成可生成任务</td><td>快速取得候选结果</td><td>查看记录并复用结果</td><td>交给人工后期</td></tr>
-                <tr data-map-level="context"><td>核心任务</td><td>导入完整剧本并保留来源</td><td>检查标题、边界与原文</td><td>合并别名，确认角色与造型</td><td>校对片段、分镜、双提示词和依赖</td><td>设置已验证模型并并发提交</td><td>查看状态、参数和结果，复用或按最小单元重生成</td><td>标记可用程度并导出给后期</td></tr>
-                <tr data-map-level="p0"><td>P0 最小可运行骨架</td><td>完整剧本导入；源文本只读保存</td><td>代码识别；人工修正；重新解析；采用版本</td><td>Dify抽取归一；核心资产生图；稳定标识；采用参考</td><td>片段/分镜；双提示词；依赖清单；分层@；原地补齐；模型能力校验</td><td>10段异步并发；<code>output_count</code>；独立生成任务；状态；对象存储转存</td><td>保存每次状态、参数和结果；查看与复用；最小单元重生成；幂等</td><td>可用/部分可用/不可用标记；前两类分段视频导出</td></tr>
+                <tr data-map-level="context"><td>核心任务</td><td>导入完整剧本并保留来源</td><td>检查标题、边界与原文</td><td>合并别名，确认角色与造型</td><td>校对片段、分镜、双提示词和依赖</td><td>设置已验证模型并并发提交</td><td>查看状态、参数和结果，复用或按最小单元重生成</td><td>从生成历史选择视频并导出</td></tr>
+                <tr data-map-level="p0"><td>P0 最小可运行骨架</td><td>完整剧本导入；源文本只读保存</td><td>代码识别；人工修正；重新解析；采用版本</td><td>Dify抽取归一；核心资产生图；稳定标识；采用参考</td><td>片段/分镜；双提示词；依赖清单；分层@；原地补齐；模型能力校验</td><td>10段异步并发；<code>output_count</code>；独立生成任务；状态；对象存储转存</td><td>保存每次状态、参数和结果；查看与复用；最小单元重生成；幂等</td><td>生成历史选择与分段视频导出</td></tr>
                 <tr data-map-level="p1"><td>P1 稳定与效率</td><td>增量追加剧集、项目模板</td><td>边界差异对比、下游影响预览</td><td>自动一致性检查、更细参考管理</td><td>连续性提示、尾帧/参考约束、自动质检</td><td>任务优先级与批次管理</td><td>历史筛选、结果对比、成本看板</td><td>批量打包、交付清单、质检报告</td></tr>
                 <tr data-map-level="p2"><td>P2 规模与差异化</td><td>多项目模板与权限</td><td>剧本质量分析、多智能体审阅</td><td>自动资产路由与跨项目复用</td><td>自由画布、专业时间线</td><td>自动模型路由、多宫格降本</td><td>团队人效与策略学习</td><td>国内外双版本、一键海外交付</td></tr>
-                <tr data-map-level="gate"><td>P0完成闸门</td><td>原文无丢失</td><td>人工可纠错且保留版本</td><td>核心资产可追溯</td><td>任一集不改库即可进入生成</td><td>并发、多结果、失败隔离成立</td><td>历史完整可复用，重生成不重复任务/计费</td><td>可用与部分可用分段视频可导出</td></tr>
+                <tr data-map-level="gate"><td>P0完成闸门</td><td>原文无丢失</td><td>人工可纠错且保留版本</td><td>核心资产可追溯</td><td>任一集不改库即可进入生成</td><td>并发、多结果、失败隔离成立</td><td>历史完整可复用，重生成不重复任务/计费</td><td>所选分段视频可导出</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <blockquote class="walking-story">作为太行Solo抽卡师，我导入完整剧本，修正分集；确认角色、造型、表演风格和参考图；校对片段、分镜、双提示词与依赖；批量提交候选视频；标记可用、部分可用或不可用；最后把前两类分段视频交给后期。</blockquote>
+        <blockquote class="walking-story">作为太行Solo抽卡师，我导入完整剧本，修正分集；确认角色、造型、表演风格和参考图；校对片段、分镜、双提示词与依赖；批量提交候选视频；最后从生成历史中选择对应视频，导出分段视频交给后期。</blockquote>
 
         <div class="acceptance-grid" aria-label="1.0七项技术护栏">
           <div class="acceptance-gate"><b>01</b><strong>三份异构剧本</strong><span>可修正，不丢原文</span></div>
           <div class="acceptance-gate"><b>02</b><strong>任一集全链直通</strong><span>不改数据库或重部署</span></div>
-          <div class="acceptance-gate"><b>03</b><strong>分段视频可预览</strong><span>结果可查看并选择采用</span></div>
+          <div class="acceptance-gate"><b>03</b><strong>分段视频可预览</strong><span>结果可查看并选择</span></div>
           <div class="acceptance-gate"><b>04</b><strong>10段并发</strong><span>多结果，失败不扩散</span></div>
           <div class="acceptance-gate"><b>05</b><strong>重试幂等</strong><span>不重复任务或计费</span></div>
           <div class="acceptance-gate"><b>06</b><strong>自有对象存储</strong><span>临时地址自动转存</span></div>
-          <div class="acceptance-gate"><b>07</b><strong>分段视频交付</strong><span>可用与部分可用结果可导出</span></div>
+          <div class="acceptance-gate"><b>07</b><strong>分段视频导出</strong><span>历史中的所选视频可下载</span></div>
         </div>
       </div>
     </section>
@@ -2163,12 +2163,12 @@
             <table class="lane-matrix">
               <thead><tr><th>责任泳道</th><th>1 导入</th><th>2 分集</th><th>3 资产</th><th>4 分镜</th><th>5 生成</th><th>6 历史 / 复用</th><th>7 导出</th></tr></thead>
               <tbody>
-                <tr><td>抽卡师</td><td>选择完整剧本</td><td>校正边界并采用版本</td><td>合并别名，确认造型与参考</td><td>校对分镜、提示词、依赖与模型</td><td>提交批次并观察状态</td><td>看历史、复用结果或按最小单元重生成</td><td>标记可用程度并导出分段视频</td></tr>
-                <tr><td>前端</td><td>上传、显示原文与解析状态</td><td>差异修订、重解析、版本选择</td><td>展示分类资产、状态与采用操作</td><td>当前上下文展示依赖与分层召回</td><td>展示预估、任务组和生成任务状态</td><td>保留历史并限制重复提交</td><td>标记可用程度并下载分段视频</td></tr>
-                <tr><td>业务后端</td><td>保存源剧本与项目状态</td><td>代码解析；保存解析版本/分集</td><td>保存稳定标识、关系与采用版本</td><td>保存片段/分镜/提示词版本/资产引用</td><td>异步提交/轮询；幂等；成本；权限</td><td>保存状态、参数和结果；按最小单元重生成；幂等</td><td>保存可用程度并提供分段视频下载</td></tr>
-                <tr><td>Dify 工作流</td><td>不参与分集</td><td>从已确认分集后开始</td><td>资产抽取、别名建议、提示词编译、结构修复</td><td>生成结构、依赖清单、双提示词；编译@上下文</td><td>不等待分钟级任务，不记账</td><td>不写生成历史与复用状态</td><td>不决定可交付状态</td></tr>
+                <tr><td>抽卡师</td><td>选择完整剧本</td><td>校正边界并采用版本</td><td>合并别名，确认造型与参考</td><td>校对分镜、提示词、依赖与模型</td><td>提交批次并观察状态</td><td>看历史、复用结果或按最小单元重生成</td><td>从历史选择视频并导出</td></tr>
+                <tr><td>前端</td><td>上传、显示原文与解析状态</td><td>差异修订、重解析、版本选择</td><td>展示分类资产、状态与采用操作</td><td>当前上下文展示依赖与分层召回</td><td>展示预估、任务组和生成任务状态</td><td>保留历史并限制重复提交</td><td>提供分段视频选择与下载</td></tr>
+                <tr><td>业务后端</td><td>保存源剧本与项目状态</td><td>代码解析；保存解析版本/分集</td><td>保存稳定标识、关系与采用版本</td><td>保存片段/分镜/提示词版本/资产引用</td><td>异步提交/轮询；幂等；成本；权限</td><td>保存状态、参数和结果；按最小单元重生成；幂等</td><td>按用户选择提供分段视频下载</td></tr>
+                <tr><td>Dify 工作流</td><td>不参与分集</td><td>从已确认分集后开始</td><td>资产抽取、别名建议、提示词编译、结构修复</td><td>生成结构、依赖清单、双提示词；编译@上下文</td><td>不等待分钟级任务，不记账</td><td>不写生成历史与复用状态</td><td>不参与用户的视频选择</td></tr>
                 <tr><td>模型 / 供应商</td><td>无</td><td>无</td><td>按适配层调用图片与视频能力</td><td>接收编译后的结构化上下文</td><td>返回任务状态、临时链接和错误</td><td>只重跑指定生成任务</td><td>不直接成为最终下载源</td></tr>
-                <tr><td>对象存储 / 交付层</td><td>保存源文件</td><td>保存版本快照</td><td>保存采用资产媒体</td><td>保存提示词与依赖快照</td><td>把临时结果持久化</td><td>保留全部历史，不覆盖结果</td><td>打包可用与部分可用的分段视频及清单</td></tr>
+                <tr><td>对象存储 / 交付层</td><td>保存源文件</td><td>保存版本快照</td><td>保存采用资产媒体</td><td>保存提示词与依赖快照</td><td>把临时结果持久化</td><td>保留全部历史，不覆盖结果</td><td>提供用户所选分段视频文件</td></tr>
               </tbody>
             </table>
           </div>
@@ -2202,13 +2202,13 @@
         </header>
 
         <div class="outcome-tree">
-          <div class="northstar-node"><span>候选北极星 · 基线待测</span><strong>单位人日交付后期的“可用分段视频数”</strong></div>
+          <div class="northstar-node"><span>候选北极星 · 基线待测</span><strong>单位人日导出的“分段视频数”</strong></div>
           <div class="driver-grid">
             <div class="driver"><b>周期</b><p>导入到首个已采用片段的时间</p></div>
             <div class="driver"><b>质量</b><p>首轮生成采用率、资产一次采用率</p></div>
             <div class="driver"><b>返工</b><p>平均重新生成次数、返工半径、补依赖往返</p></div>
             <div class="driver"><b>成本</b><p>每个最终采用片段的总生成成本</p></div>
-            <div class="driver"><b>交付</b><p>可用与部分可用分段视频成功导出的比例</p></div>
+            <div class="driver"><b>交付</b><p>用户所选分段视频成功导出的比例</p></div>
           </div>
           <div class="guardrail-row"><span>原文零丢失</span><span>不重复计费</span><span>单任务失败不扩散</span><span>无声结果不冒充交付</span></div>
         </div>
@@ -2228,7 +2228,7 @@
                 <tr><td><strong>X0 基线</strong></td><td>产出、周期、采用率和成本没有统一口径</td><td>得到真实当前基线</td><td>选3份格式不同的真实剧本，记录现有人工流程节点时间、生成次数、采用数和交付问题</td><td>形成可比较基线；若无法测量，先补埋点与口径</td></tr>
                 <tr><td><strong>X1 任务原型</strong></td><td>关键对象和状态对制作人是否可理解未知</td><td>用户完成P0并知道错误在哪里修</td><td>完成分集修正、缺失资产闭环、单条重试、采用导出四个高风险任务</td><td>记录完成率、求助点、误操作和回退路径；阈值待确认</td></tr>
                 <tr><td><strong>X2 技术尖刺</strong></td><td>并发、幂等、对象存储和失败恢复风险最高</td><td>一条默认模型链满足七条护栏</td><td>真实调用：10段并发、多结果、失败注入、重复点击与链接转存</td><td>关键护栏无法成立则调整架构或范围，不进入全面页面开发</td></tr>
-                <tr><td><strong>X3 端到端试点</strong></td><td>技术可用不等于生产有价值</td><td>完整流程可稳定跑通</td><td>内部团队完成“导入 → 可用/部分可用分段视频交付后期”</td><td>比较后期实际使用率、质量、返工与成本，决定后续优化顺序</td></tr>
+                <tr><td><strong>X3 端到端试点</strong></td><td>技术可用不等于生产有价值</td><td>完整流程可稳定跑通</td><td>内部团队完成“导入 → 从生成历史选择并导出分段视频”</td><td>比较导出成功率、质量、返工与成本，决定后续优化顺序</td></tr>
               </tbody>
             </table>
           </div>
@@ -2243,20 +2243,20 @@
         <header class="chapter-head">
           <div class="chapter-no">10</div>
           <div><div class="eyebrow">1.0执行结论</div><h2>先把完整生产流程跑通，不再增加前置确认</h2></div>
-          <p class="chapter-question"><strong>验证目标</strong><br>完整剧本能否稳定走到可交给后期使用的分段视频？</p>
+          <p class="chapter-question"><strong>验证目标</strong><br>完整剧本能否稳定走到用户选择并导出分段视频？</p>
         </header>
 
         <div class="decision-callout">
           <div class="metric-value">1.0</div>
-          <div><strong>唯一目标：跑通抽卡生产与后期交接</strong><p>完整剧本 → 分集 → 资产 → 分镜 → 生成 → 可用程度标记 → 分段视频交付后期</p></div>
+          <div><strong>唯一目标：跑通抽卡生产与后期交接</strong><p>完整剧本 → 分集 → 资产 → 分镜 → 生成历史 → 选择视频 → 导出分段视频</p></div>
           <span class="badge decision">已确认</span>
         </div>
 
         <section style="margin-top: 28px;">
           <div class="section-label">当前执行口径</div>
           <div class="confirmed-list">
-            <div class="confirmed-row"><b>闭环范围</b><span>完整剧本到可交付素材，所有关键步骤可连续完成。</span></div>
-            <div class="confirmed-row"><b>完成标准</b><span>生成结果可查看历史、按片段或分镜重新生成；可用及部分可用的分段视频可导出给后期。</span></div>
+            <div class="confirmed-row"><b>闭环范围</b><span>完整剧本到分段视频导出，所有关键步骤可连续完成。</span></div>
+            <div class="confirmed-row"><b>完成标准</b><span>生成结果可查看历史、按片段或分镜重新生成，并支持用户选择对应视频导出。</span></div>
             <div class="confirmed-row"><b>后期边界</b><span>拼接、剪辑、节奏、背景音乐、字幕和整片合成由后期完成，不纳入太行Solo 1.0。</span></div>
             <div class="confirmed-row"><b>推进方式</b><span>用真实项目边跑边修；不另设硬性时间门槛，首版不扩展非闭环能力。</span></div>
           </div>
