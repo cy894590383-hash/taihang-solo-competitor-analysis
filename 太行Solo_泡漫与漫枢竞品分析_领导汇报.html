@@ -1,0 +1,2441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>太行Solo｜泡漫与漫枢竞品分析｜管理层深度汇报</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fdfae7;
+      --surface: #fffdf2;
+      --primary: #1e2bfa;
+      --text: #111111;
+      --text-muted: #626262;
+      --text-light: #8a8a8a;
+      --accent-light: rgba(30, 43, 250, 0.08);
+      --accent-medium: rgba(30, 43, 250, 0.15);
+      --border: rgba(30, 43, 250, 0.20);
+      --border-strong: rgba(30, 43, 250, 0.42);
+      --card-bg: rgba(30, 43, 250, 0.04);
+      --positive: #047857;
+      --negative: #b91c1c;
+      --header-height: 68px;
+      --content-width: 1480px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 18px);
+    }
+
+    body {
+      min-width: 1180px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    button,
+    a,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible,
+    [contenteditable="true"]:focus-visible {
+      outline: 3px solid var(--accent-medium);
+      outline-offset: 2px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .display,
+    .chapter-no,
+    .metric-value,
+    .stage-index,
+    .mono-label {
+      font-family: 'Space Grotesk', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 980px;
+      font-size: 4.3rem;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    h2 {
+      max-width: 1100px;
+      font-size: 2.25rem;
+      line-height: 1.22;
+      font-weight: 650;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    p,
+    li,
+    td,
+    th {
+      overflow-wrap: anywhere;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .report-header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      height: var(--header-height);
+      border-bottom: 1px solid var(--border);
+      background: rgba(253, 250, 231, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 48px), 1800px);
+      height: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: baseline;
+      gap: 9px;
+      white-space: nowrap;
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-weight: 700;
+    }
+
+    .brand-lockup span {
+      color: var(--primary);
+    }
+
+    .brand-lockup small {
+      color: var(--text-light);
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .chapter-nav {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .chapter-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chapter-nav a {
+      flex: 0 0 auto;
+      padding: 8px 9px;
+      border-radius: 7px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+      transition: color 160ms ease, background 160ms ease;
+    }
+
+    .chapter-nav a:hover,
+    .chapter-nav a.active {
+      color: var(--primary);
+      background: var(--accent-light);
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .mode-switch {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .mode-btn,
+    .utility-btn,
+    .segment-btn,
+    .evidence-link,
+    .dialog-close {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .mode-btn {
+      padding: 6px 10px;
+      border-radius: 5px;
+      color: var(--text-muted);
+      background: transparent;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .mode-btn.active {
+      color: var(--surface);
+      background: var(--primary);
+    }
+
+    .utility-btn {
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--primary);
+      background: var(--surface);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    .utility-btn:hover {
+      border-color: var(--primary);
+      background: var(--accent-light);
+    }
+
+    .read-progress {
+      position: fixed;
+      z-index: 90;
+      top: calc(var(--header-height) - 2px);
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    body.summary-mode .chapter[data-depth="deep"],
+    body.summary-mode .chapter-nav a[data-depth="deep"] {
+      display: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 220px);
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 34%;
+      background: var(--accent-light);
+      clip-path: polygon(26% 0, 100% 0, 100% 100%, 0 100%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 96px), var(--content-width));
+      min-height: inherit;
+      margin: 0 auto;
+      padding: 74px 0 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.65fr);
+      gap: 68px;
+      align-items: center;
+    }
+
+    .hero-kicker,
+    .eyebrow {
+      color: var(--primary);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      margin: 18px 0 26px;
+      border-radius: 2px;
+      background: var(--primary);
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      max-width: 870px;
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 1.17rem;
+      line-height: 1.75;
+    }
+
+    .hero-meta {
+      margin-top: 30px;
+      color: var(--text-light);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 0.78rem;
+    }
+
+    .hero-thesis {
+      position: relative;
+      z-index: 2;
+      padding: 26px 0 26px 28px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .hero-thesis h2 {
+      max-width: 440px;
+      font-size: 1.68rem;
+    }
+
+    .hero-thesis p {
+      max-width: 420px;
+      margin-top: 16px;
+      color: var(--text-muted);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 26px;
+      border: 1px solid var(--border);
+      background: var(--border);
+    }
+
+    .hero-metric {
+      min-height: 112px;
+      padding: 18px;
+      background: var(--surface);
+    }
+
+    .hero-metric strong {
+      display: block;
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+
+    .hero-metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .chapter {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter:nth-of-type(even) {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .chapter-inner {
+      width: min(calc(100% - 96px), var(--content-width));
+      margin: 0 auto;
+      padding: 92px 0 98px;
+    }
+
+    .chapter-head {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr) minmax(280px, 0.34fr);
+      gap: 26px;
+      align-items: start;
+      margin-bottom: 38px;
+    }
+
+    .chapter-no {
+      color: var(--primary);
+      font-size: 2.45rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .chapter-head h2 {
+      margin-top: 8px;
+    }
+
+    .chapter-question {
+      margin-top: 6px;
+      padding-left: 18px;
+      border-left: 2px solid var(--border-strong);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .chapter-lead {
+      max-width: 1120px;
+      margin: -12px 0 34px 104px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .section-label {
+      margin-bottom: 13px;
+      color: var(--primary);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .evidence-badges,
+    .inline-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 3px 8px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-muted);
+      background: var(--surface);
+      font-size: 0.7rem;
+      font-weight: 600;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .badge.primary {
+      color: var(--primary);
+      background: var(--accent-light);
+    }
+
+    .badge.inference {
+      border-style: dashed;
+    }
+
+    .badge.pending {
+      color: var(--negative);
+      border-color: rgba(185, 28, 28, 0.26);
+      background: rgba(185, 28, 28, 0.04);
+    }
+
+    .table-shell,
+    .matrix-shell,
+    .journey-tool,
+    .map-tool {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .table-scroll,
+    .matrix-scroll {
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    th {
+      color: var(--text);
+      background: var(--accent-light);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-weight: 650;
+    }
+
+    td {
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.34);
+    }
+
+    tr:last-child > * {
+      border-bottom: 0;
+    }
+
+    tr > *:last-child {
+      border-right: 0;
+    }
+
+    td strong,
+    .data-strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .fact-chain th:nth-child(1) { width: 24%; }
+    .fact-chain th:nth-child(2) { width: 24%; }
+    .fact-chain th:nth-child(3) { width: 35%; }
+    .fact-chain th:nth-child(4) { width: 17%; }
+
+    .summary-findings {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .finding {
+      min-height: 186px;
+      padding: 22px 20px;
+      border-top: 4px solid var(--primary);
+      background: var(--card-bg);
+    }
+
+    .finding span {
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .finding h3 {
+      margin-top: 10px;
+    }
+
+    .finding p {
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .northstar-callout,
+    .decision-callout {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--primary);
+      background: var(--accent-light);
+    }
+
+    .northstar-callout .metric-value {
+      color: var(--primary);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .northstar-callout strong,
+    .decision-callout strong {
+      display: block;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .northstar-callout p,
+    .decision-callout p {
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .value-chains {
+      display: grid;
+      gap: 18px;
+    }
+
+    .value-chain {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 280px;
+      gap: 22px;
+      align-items: center;
+      min-height: 116px;
+      padding: 20px 22px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value-chain.solo {
+      background: var(--accent-light);
+      border-color: var(--border-strong);
+    }
+
+    .chain-brand strong {
+      display: block;
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 1.15rem;
+    }
+
+    .chain-brand span,
+    .chain-note {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .chain-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(100px, 1fr));
+      align-items: stretch;
+    }
+
+    .chain-node {
+      position: relative;
+      padding: 12px 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      text-align: center;
+      font-size: 0.77rem;
+      font-weight: 600;
+    }
+
+    .chain-node:not(:last-child)::after {
+      content: '›';
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -13px;
+      transform: translateY(-50%);
+      width: 24px;
+      color: var(--primary);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .strategy-levels {
+      border-top: 1px solid var(--border);
+    }
+
+    .strategy-level {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr) 116px;
+      gap: 16px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .strategy-level b {
+      color: var(--primary);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+    }
+
+    .strategy-level p {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .scope-note {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card-bg);
+    }
+
+    .scope-note ul {
+      margin-top: 14px;
+      list-style: none;
+    }
+
+    .scope-note li {
+      position: relative;
+      padding: 9px 0 9px 18px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .scope-note li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .tool-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .tool-title {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .segment-control {
+      display: inline-flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .segment-btn {
+      padding: 7px 12px;
+      border-radius: 5px;
+      color: var(--text-muted);
+      background: transparent;
+      font-size: 0.75rem;
+      font-weight: 650;
+    }
+
+    .segment-btn.active {
+      color: var(--surface);
+      background: var(--primary);
+    }
+
+    .journey-view[hidden] {
+      display: none;
+    }
+
+    .journey-matrix {
+      min-width: 1460px;
+      table-layout: fixed;
+    }
+
+    .journey-matrix th:first-child,
+    .journey-matrix td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      width: 126px;
+      color: var(--primary);
+      background: #f5f2e4;
+      font-weight: 700;
+    }
+
+    .journey-matrix th:first-child {
+      z-index: 4;
+      background: #eeecdf;
+    }
+
+    .journey-matrix th:not(:first-child) {
+      width: 190px;
+      text-align: center;
+    }
+
+    .journey-matrix td {
+      min-height: 92px;
+      font-size: 0.77rem;
+    }
+
+    .journey-matrix td strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .evidence-link {
+      display: inline-flex;
+      margin-top: 7px;
+      padding: 3px 7px;
+      border-radius: 100px;
+      color: var(--primary);
+      background: var(--accent-light);
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .evidence-link:hover {
+      background: var(--accent-medium);
+    }
+
+    .path-stack {
+      display: grid;
+      gap: 15px;
+    }
+
+    .path-lane {
+      display: grid;
+      grid-template-columns: 130px repeat(6, minmax(120px, 1fr));
+      align-items: stretch;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .path-label,
+    .path-step {
+      min-height: 84px;
+      padding: 15px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .path-label {
+      color: var(--primary);
+      background: var(--accent-light);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-weight: 700;
+    }
+
+    .path-label small {
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-family: 'Inter', 'PingFang SC', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+    }
+
+    .path-step {
+      position: relative;
+      border-left: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .path-step:not(:last-child)::after {
+      content: '›';
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -8px;
+      transform: translateY(-50%);
+      color: var(--primary);
+      font-size: 1.15rem;
+    }
+
+    .path-step small {
+      display: block;
+      margin-top: 5px;
+      color: var(--text-muted);
+      font-size: 0.69rem;
+      font-weight: 400;
+    }
+
+    .rework-table {
+      min-width: 1180px;
+      margin-top: 30px;
+    }
+
+    .rework-table th:nth-child(1) { width: 15%; }
+    .rework-table th:nth-child(2) { width: 20%; }
+    .rework-table th:nth-child(3) { width: 20%; }
+    .rework-table th:nth-child(4) { width: 17%; }
+    .rework-table th:nth-child(5) { width: 28%; }
+
+    .radius-definition {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+      padding: 20px 22px;
+      border-left: 4px solid var(--primary);
+      background: var(--accent-light);
+    }
+
+    .radius-definition code {
+      color: var(--primary);
+      font-family: 'Space Grotesk', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .radius-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    .mechanism-map {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-bottom: 28px;
+    }
+
+    .mechanism-node {
+      position: relative;
+      min-height: 108px;
+      padding: 18px 16px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .mechanism-node:not(:last-child)::after {
+      content: '›';
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      right: -13px;
+      transform: translateY(-50%);
+      width: 24px;
+      color: var(--primary);
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    .mechanism-node span {
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .mechanism-node strong {
+      display: block;
+      margin-top: 7px;
+      color: var(--text);
+    }
+
+    .mechanism-node small {
+      display: block;
+      margin-top: 5px;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
+
+    .mechanism-table {
+      min-width: 1320px;
+    }
+
+    .object-models {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .object-model {
+      padding: 20px;
+      border-top: 3px solid var(--primary);
+      background: var(--card-bg);
+    }
+
+    .object-model code {
+      display: block;
+      margin-top: 12px;
+      color: var(--primary);
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      white-space: normal;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .evidence-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .evidence-card.is-right {
+      grid-column: 2;
+    }
+
+    .evidence-media {
+      position: relative;
+      aspect-ratio: 1512 / 772;
+      min-height: 0;
+      overflow: hidden;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--accent-light);
+      cursor: zoom-in;
+    }
+
+    .evidence-media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #0b0e13;
+    }
+
+    .evidence-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 24px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .evidence-placeholder strong {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+    }
+
+    .evidence-placeholder span {
+      color: var(--text-muted);
+      font-size: 0.76rem;
+    }
+
+    .evidence-media.has-image .evidence-placeholder {
+      display: none;
+    }
+
+    .evidence-copy {
+      padding: 18px 19px;
+    }
+
+    .evidence-copy header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .evidence-copy h3 {
+      font-size: 1rem;
+    }
+
+    .evidence-fields {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px 18px;
+      margin-top: 13px;
+    }
+
+    .evidence-field {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      gap: 9px;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .evidence-field b {
+      color: var(--text);
+    }
+
+    .evidence-field span {
+      color: var(--text-muted);
+    }
+
+    .evidence-rule {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 24px;
+      padding: 20px 22px;
+      border: 1px dashed var(--border-strong);
+      background: var(--card-bg);
+    }
+
+    .evidence-rule ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 24px;
+      list-style: none;
+    }
+
+    .evidence-rule li {
+      color: var(--text-muted);
+      font-size: 0.77rem;
+    }
+
+    .story-map {
+      min-width: 1540px;
+      table-layout: fixed;
+    }
+
+    .story-map th:first-child,
+    .story-map td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 4;
+      width: 144px;
+      color: var(--primary);
+      background: #f5f2e4;
+      font-weight: 700;
+    }
+
+    .story-map th:first-child {
+      background: #eeecdf;
+    }
+
+    .story-map th:not(:first-child) {
+      width: 198px;
+      text-align: center;
+    }
+
+    .story-map tr[data-map-level="p0"] td:not(:first-child) {
+      color: var(--text);
+      background: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .story-map tr[hidden] {
+      display: none;
+    }
+
+    .walking-story {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-left: 4px solid var(--primary);
+      background: var(--accent-light);
+      color: var(--text);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .acceptance-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .acceptance-gate {
+      min-height: 128px;
+      padding: 16px 13px;
+      border-top: 3px solid var(--primary);
+      background: var(--card-bg);
+    }
+
+    .acceptance-gate b {
+      display: block;
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.75rem;
+    }
+
+    .acceptance-gate strong {
+      display: block;
+      margin-top: 7px;
+      color: var(--text);
+      font-size: 0.82rem;
+    }
+
+    .acceptance-gate span {
+      display: block;
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.69rem;
+      line-height: 1.45;
+    }
+
+    .lane-matrix {
+      min-width: 1580px;
+      table-layout: fixed;
+    }
+
+    .lane-matrix th:first-child,
+    .lane-matrix td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 4;
+      width: 150px;
+      color: var(--primary);
+      background: #f5f2e4;
+      font-weight: 700;
+    }
+
+    .lane-matrix th:first-child {
+      background: #eeecdf;
+    }
+
+    .lane-matrix th:not(:first-child) {
+      width: 204px;
+      text-align: center;
+    }
+
+    .lane-matrix td {
+      font-size: 0.75rem;
+    }
+
+    .failure-table {
+      min-width: 1200px;
+      margin-top: 28px;
+    }
+
+    .outcome-tree {
+      margin-bottom: 30px;
+      padding: 30px 30px 26px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .northstar-node {
+      width: min(720px, 76%);
+      margin: 0 auto;
+      padding: 20px 24px;
+      border: 2px solid var(--primary);
+      background: var(--accent-light);
+      text-align: center;
+    }
+
+    .northstar-node span {
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .northstar-node strong {
+      display: block;
+      margin-top: 7px;
+      color: var(--text);
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    .driver-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .driver-grid::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--border-strong);
+    }
+
+    .driver {
+      position: relative;
+      min-height: 126px;
+      padding: 17px 15px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+    }
+
+    .driver::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      width: 1px;
+      height: 18px;
+      background: var(--border-strong);
+    }
+
+    .driver b {
+      color: var(--primary);
+    }
+
+    .driver p {
+      margin-top: 6px;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+    }
+
+    .guardrail-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .guardrail-row span {
+      padding: 9px 11px;
+      border: 1px dashed var(--border-strong);
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.71rem;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .risk-card {
+      padding: 20px;
+      border-top: 4px solid var(--primary);
+      background: var(--card-bg);
+    }
+
+    .risk-card header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .risk-card header span {
+      color: var(--negative);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .risk-card p {
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .risk-card small {
+      display: block;
+      margin-top: 13px;
+      padding-top: 11px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.7rem;
+      line-height: 1.45;
+    }
+
+    .experiment-table {
+      min-width: 1320px;
+    }
+
+    .experiment-table th:first-child { width: 12%; }
+    .experiment-table th:nth-child(2) { width: 18%; }
+    .experiment-table th:nth-child(3) { width: 18%; }
+    .experiment-table th:nth-child(4) { width: 28%; }
+    .experiment-table th:nth-child(5) { width: 24%; }
+
+    .decision-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: 28px;
+    }
+
+    .decision-layout.is-single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .confirmed-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .confirmed-row {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .confirmed-row b {
+      color: var(--primary);
+    }
+
+    .confirmed-row span {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .decision-cards {
+      display: grid;
+      gap: 14px;
+    }
+
+    .decision-card {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 15px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .decision-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      color: var(--surface);
+      background: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+    }
+
+    .decision-card p {
+      margin-top: 5px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .decision-card .recommendation {
+      margin-top: 11px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.75rem;
+    }
+
+    .resolution-log {
+      margin-top: 28px;
+      padding: 22px;
+      border-left: 4px solid var(--primary);
+      background: var(--accent-light);
+    }
+
+    .resolution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .resolution-item {
+      padding-right: 18px;
+      border-right: 1px solid var(--border);
+    }
+
+    .resolution-item:last-child {
+      border-right: 0;
+    }
+
+    .resolution-item span {
+      display: block;
+      margin-top: 10px;
+      min-height: 36px;
+      padding: 7px 4px;
+      border-bottom: 1px solid var(--border-strong);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    .next-actions {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .next-action {
+      min-height: 108px;
+      padding: 15px;
+      border-top: 3px solid var(--primary);
+      background: var(--card-bg);
+    }
+
+    .next-action b {
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+    }
+
+    .next-action span {
+      display: block;
+      margin-top: 8px;
+      color: var(--text);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    .closing-band {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 48px;
+      color: var(--surface);
+      background: var(--text);
+    }
+
+    .closing-inner {
+      position: relative;
+      z-index: 2;
+      width: min(100%, var(--content-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .closing-band h2 {
+      color: var(--surface);
+    }
+
+    .closing-band p {
+      margin-top: 16px;
+      color: rgba(255, 253, 242, 0.66);
+    }
+
+    .closing-meta {
+      color: rgba(255, 253, 242, 0.58);
+      text-align: right;
+      font-family: 'Space Grotesk', 'PingFang SC', sans-serif;
+      font-size: 0.78rem;
+    }
+
+    .source-footer {
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .source-inner {
+      width: min(calc(100% - 96px), var(--content-width));
+      margin: 0 auto;
+      padding: 38px 0 52px;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      padding: 14px 0;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    details p,
+    details li {
+      color: var(--text-muted);
+      font-size: 0.78rem;
+    }
+
+    details ul {
+      margin: 0 0 18px 18px;
+    }
+
+    dialog {
+      margin: auto;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--text);
+      background: var(--surface);
+      box-shadow: 0 26px 80px rgba(17, 17, 17, 0.22);
+    }
+
+    dialog::backdrop {
+      background: rgba(17, 17, 17, 0.46);
+      backdrop-filter: blur(3px);
+    }
+
+    .evidence-dialog {
+      width: min(1120px, calc(100vw - 80px));
+      max-height: calc(100vh - 70px);
+    }
+
+    .drawer-dialog {
+      width: min(760px, calc(100vw - 80px));
+      max-height: calc(100vh - 70px);
+      margin: auto 24px auto auto;
+    }
+
+    .dialog-header {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .dialog-close {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--primary);
+      background: var(--surface);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .dialog-close:hover {
+      color: var(--surface);
+      background: var(--primary);
+    }
+
+    .evidence-dialog-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      min-height: 520px;
+    }
+
+    .dialog-image-wrap {
+      position: relative;
+      min-height: 520px;
+      overflow: auto;
+      border-right: 1px solid var(--border);
+      background: var(--accent-light);
+    }
+
+    .dialog-image-wrap img {
+      display: block;
+      width: 100%;
+      min-height: 520px;
+      object-fit: contain;
+    }
+
+    .dialog-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .dialog-evidence-copy {
+      padding: 24px;
+      overflow: auto;
+    }
+
+    .dialog-evidence-copy dl {
+      margin-top: 20px;
+    }
+
+    .dialog-evidence-copy dt {
+      margin-top: 15px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .dialog-evidence-copy dd {
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .drawer-body {
+      padding: 10px 20px 24px;
+      overflow: auto;
+    }
+
+    .drawer-item {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .drawer-item b {
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .drawer-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.84rem;
+    }
+
+    .drawer-item p {
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+    }
+
+    @media (max-width: 1360px) {
+      h1 { font-size: 3.7rem; }
+      h2 { font-size: 2rem; }
+      .header-inner { gap: 14px; }
+      .chapter-nav a { padding-inline: 7px; }
+      .hero-inner,
+      .chapter-inner,
+      .source-inner { width: calc(100% - 64px); }
+      .chapter-head { grid-template-columns: 66px minmax(0, 1fr) 260px; }
+      .chapter-lead { margin-left: 92px; }
+      .acceptance-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media print {
+      body {
+        min-width: 0;
+        background: white;
+      }
+      .report-header,
+      .read-progress,
+      dialog,
+      .tool-toolbar .segment-control,
+      .utility-btn {
+        display: none !important;
+      }
+      .hero,
+      .chapter,
+      .closing-band,
+      .source-footer {
+        break-inside: avoid;
+      }
+      .hero {
+        min-height: 0;
+      }
+      .hero-inner,
+      .chapter-inner,
+      .source-inner {
+        width: 100%;
+      }
+      .chapter-inner {
+        padding-block: 44px;
+      }
+      .table-scroll,
+      .matrix-scroll {
+        overflow: visible;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="report-header">
+    <div class="header-inner">
+      <a class="brand-lockup" href="#top" aria-label="返回报告首页"><span>太行Solo</span><small>竞品深度汇报</small></a>
+      <nav class="chapter-nav" aria-label="章节导航">
+        <a href="#ch1">01 结论</a>
+        <a href="#ch2">02 战略</a>
+        <a href="#ch3" data-depth="deep">03 旅程</a>
+        <a href="#ch4" data-depth="deep">04 返工</a>
+        <a href="#ch5">05 机制</a>
+        <a href="#ch6" data-depth="deep">06 证据</a>
+        <a href="#ch7" data-depth="deep">07 地图</a>
+        <a href="#ch8" data-depth="deep">08 责任</a>
+        <a href="#ch9">09 验证</a>
+        <a href="#ch10">10 结论</a>
+      </nav>
+      <div class="header-tools">
+        <div class="mode-switch" role="group" aria-label="阅读模式">
+          <button class="mode-btn active" type="button" data-mode="full" aria-pressed="true">完整分析</button>
+          <button class="mode-btn" type="button" data-mode="summary" aria-pressed="false">3分钟摘要</button>
+        </div>
+        <button class="utility-btn" type="button" id="openEvidenceIndex">证据索引</button>
+        <button class="utility-btn" type="button" id="printReport">打印</button>
+      </div>
+    </div>
+  </header>
+  <div class="read-progress" id="readProgress" aria-hidden="true"></div>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="report-title">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">太行Solo · 管理层深度汇报 · 2026.08</div>
+          <div class="accent-line"></div>
+          <h1 id="report-title">泡漫与漫枢<br><span>竞品逆向分析</span></h1>
+          <p class="hero-subtitle">从页面功能比较，进一步进入用户决策、对象状态、返工半径与交付机制。目标不是复制两款产品，而是判断太行Solo 1.0 应如何更早发现错误、更小范围修复错误。</p>
+          <p class="hero-meta">内部领导汇报 · 分析范围：完整剧本 → 分集 → 资产 → 分镜 → 生成 → 带声音视频素材</p>
+        </div>
+        <aside class="hero-thesis">
+          <div class="eyebrow">核心命题</div>
+          <h2>两种生产逻辑，一个低返工闭环</h2>
+          <p>泡漫主要控制“什么时候进入下一步”，漫枢主要控制“在哪个粒度修改”。太行Solo需要同时具备阶段护栏与局部可逆。</p>
+          <div class="hero-metrics" aria-label="报告摘要">
+            <div class="hero-metric"><strong>7</strong><span>阶段真实用户旅程<br>追踪动作与状态</span></div>
+            <div class="hero-metric"><strong>5</strong><span>生产机制<br>替代功能并集</span></div>
+            <div class="hero-metric"><strong>1</strong><span>1.0核心目标<br>先跑通流程闭环</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1" data-summary="keep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">01</div>
+          <div><div class="eyebrow">核心结论</div><h2>竞品真正揭示的，不是功能差异，而是如何控制错误与返工</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>这次深度拆解，除了证明1.0要做哪些功能，新增了什么有决策价值的认知？</p>
+        </header>
+        <p class="chapter-lead">关键差异发生在生产顺序、编辑粒度和交付状态。以下五条因果链将页面事实直接连接到太行Solo的产品机制。</p>
+
+        <div class="table-shell">
+          <div class="table-scroll">
+            <table class="fact-chain">
+              <thead><tr><th>页面事实</th><th>深层判断</th><th>对太行Solo的含义</th><th>证据状态</th></tr></thead>
+              <tbody>
+                <tr><td><strong>泡漫以分集、资产确认、片段生产组织流程</strong></td><td>主要控制“先做什么、何时允许进入下一步”</td><td>保留阶段闸门，阻止错误进入高成本生成</td><td><span class="badge primary">A 实测</span> <span class="badge">B 资料</span></td></tr>
+                <tr><td><strong>漫枢以项目资产与分镜表组织编辑</strong></td><td>主要控制“在哪个粒度修改、如何保留历史”</td><td>分镜级编辑，片段级生成、计费、重试和采用</td><td><span class="badge primary">A 实测</span> <span class="badge">B 手册</span></td></tr>
+                <tr><td><strong>泡漫手动拆分后当前路径无法切回自动</strong></td><td>强流程如果不可逆，会把纠错变成新的锁定</td><td>分集版本化；允许重新解析、比较并选择采用版本</td><td><button class="evidence-link" data-evidence-id="E01">E01 · A 实测</button></td></tr>
+                <tr><td><strong>漫枢缺资产时需返回资产步骤处理</strong></td><td>专业能力如果跨页接力，会增加切换和漏选风险</td><td>当前分镜原地完成依赖生成、选择、绑定与回写</td><td><button class="evidence-link" data-evidence-id="E06">E06 · A 实测</button></td></tr>
+                <tr><td><strong>生成之后仍需声音、采用版本和持久化文件</strong></td><td>调用成功、可预览、可交付是三个不同状态</td><td>交付必须同时通过声音、采用版本和自有对象存储</td><td><span class="badge">A/B 证据</span> <span class="badge primary">Solo决策</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="summary-findings">
+          <article class="finding"><span>结论 01</span><h3>生产单元比模型菜单更重要</h3><p>模型可替换；分集、片段、分镜、资产与结果版本的关系决定错误能否局部修复。</p></article>
+          <article class="finding"><span>结论 02</span><h3>快，不等于步骤少</h3><p>上游确认、依赖校验、失败隔离和历史版本共同决定真实生产速度。</p></article>
+          <article class="finding"><span>结论 03</span><h3>批量必须配套最小单元重生成</h3><p>每个片段或分镜都要独立记录状态、参数和结果，失败或不可用时只重新生成该单元。</p></article>
+          <article class="finding"><span>结论 04</span><h3>交付必须有业务定义</h3><p>无声、临时链接或未采用版本只能算中间结果，不能算生产完成。</p></article>
+        </div>
+
+        <div class="northstar-callout">
+          <div class="metric-value">1</div>
+          <div><strong>候选北极星：单位人日交付的“已采用、带声音视频片段数”</strong><p>配套观察周期、首轮采用率、平均重新生成次数、返工半径和最终采用片段成本。</p></div>
+          <span class="badge pending">当前基线待测</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2" data-summary="keep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">02</div>
+          <div><div class="eyebrow">战略定位</div><h2>三种价值链，不是三套功能清单</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>三款产品分别在争夺哪一段价值？太行Solo为什么不应做成功能并集？</p>
+        </header>
+
+        <div class="value-chains">
+          <div class="value-chain">
+            <div class="chain-brand"><strong>泡漫</strong><span>内容生态中的标准生产线</span></div>
+            <div class="chain-flow"><div class="chain-node">内容 / IP</div><div class="chain-node">标准化生产</div><div class="chain-node">签约 / 交易</div><div class="chain-node">成品 / 分发</div><div class="chain-node">生产数据</div></div>
+            <p class="chain-note">优势来自流程、供需与交付生态的联动，而非单个生成页面。</p>
+          </div>
+          <div class="value-chain">
+            <div class="chain-brand"><strong>漫枢</strong><span>项目资产驱动的专业工作台</span></div>
+            <div class="chain-flow"><div class="chain-node">项目 / 团队</div><div class="chain-node">项目资产</div><div class="chain-node">多模型生产</div><div class="chain-node">画布 / 数据</div><div class="chain-node">成本 / 人效</div></div>
+            <p class="chain-note">优势来自资产沉淀、分镜控制与团队经营能力的组合。</p>
+          </div>
+          <div class="value-chain solo">
+            <div class="chain-brand"><strong>太行Solo 1.0</strong><span>内部稳定生产闭环</span></div>
+            <div class="chain-flow"><div class="chain-node">完整剧本</div><div class="chain-node">可逆结构化</div><div class="chain-node">稳定资产 / 分镜</div><div class="chain-node">版本化生成</div><div class="chain-node">声音素材包</div></div>
+            <p class="chain-note">生成、复用、重新生成与成本数据自动回流，逐步形成内部生产壁垒。</p>
+          </div>
+        </div>
+
+        <div class="strategy-grid">
+          <div>
+            <div class="section-label">战略部署四层</div>
+            <div class="strategy-levels">
+              <div class="strategy-level"><b>愿景</b><p>让漫剧生产形成可复制的系统能力，而不是依赖少数熟练抽卡师。</p><span class="badge inference">战略假设</span></div>
+              <div class="strategy-level"><b>战略意图</b><p>内部团队稳定完成“完整剧本 → 可交付带声音素材”，并减少全链路返工。</p><span class="badge primary">已确认</span></div>
+              <div class="strategy-level"><b>产品举措</b><p>提高单位人日采用片段数，缩短首个采用结果时间，降低最终采用片段成本。</p><span class="badge pending">阈值待测</span></div>
+              <div class="strategy-level"><b>产品选项</b><p>可逆分集、稳定资产、依赖闭环、并发、失败隔离、版本采用、声音与对象存储校验。</p><span class="badge primary">进入验证</span></div>
+            </div>
+          </div>
+          <aside class="scope-note">
+            <div class="section-label">1.0 不竞争什么</div>
+            <h3>先占住中段闭环，不追逐生态宽度</h3>
+            <ul>
+              <li>不做内容、接单、发行与交易生态。</li>
+              <li>不做完整组织、预算、积分和人效体系。</li>
+              <li>不做自由画布、专业时间线和一键精品成片。</li>
+              <li>不做未经验证的模型大全与自动路由。</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3" data-depth="deep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">03</div>
+          <div><div class="eyebrow">用户旅程</div><h2>七阶段双竞品用户旅程：追踪动作、判断与对象状态</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>用户如何从剧本走到交付？每一步由谁判断、系统写入什么状态、问题在哪里暴露？</p>
+        </header>
+        <p class="chapter-lead">这不是五个功能名称，而是“目标 → 动作 → 反馈 → 决策 → 状态变化 → 阻力 → 证据”的连续变化。</p>
+
+        <div class="journey-tool">
+          <div class="tool-toolbar">
+            <span class="tool-title">统一骨架：项目设定 → 分集/片段 → 资产就绪 → 分镜确认 → 批量生成 → 历史记录 → 素材交付</span>
+            <div class="segment-control" role="group" aria-label="用户旅程视图">
+              <button class="segment-btn active" type="button" data-journey="compare" aria-pressed="true">对照摘要</button>
+              <button class="segment-btn" type="button" data-journey="pop" aria-pressed="false">泡漫旅程</button>
+              <button class="segment-btn" type="button" data-journey="manyu" aria-pressed="false">漫枢旅程</button>
+            </div>
+          </div>
+
+          <div class="matrix-scroll journey-view" data-journey-view="compare">
+            <table class="journey-matrix">
+              <thead><tr><th>对照维度</th><th>1 项目设定</th><th>2 分集 / 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <tbody>
+                <tr><td>泡漫控制</td><td><strong>预设约束</strong>从完整剧本进入标准生产</td><td><strong>独立确认闸门</strong>先形成分集</td><td><strong>生产就绪</strong>角色、造型、声音关系清晰</td><td><strong>集中上下文</strong>参考与双提示词靠近生成</td><td><strong>批量优先</strong>系统承担初稿生产</td><td><strong>记录与复用</strong>保存片段生成状态、参数和结果</td><td><strong>配音/导出可见</strong>素材交付链较连贯</td></tr>
+                <tr><td>漫枢控制</td><td><strong>起点自由</strong>可输入或跳过剧本</td><td><strong>片段边界</strong>更多依赖用户正确输入</td><td><strong>项目资产池</strong>生成/上传/筛选/绑定</td><td><strong>专业分镜</strong>自动拆分、编辑、@召回</td><td><strong>模式与多结果</strong>逐分镜深度控制</td><td><strong>记录与复用</strong>保存分镜生成状态、参数和结果</td><td><strong>视频拼接</strong>声音与后期仍待验证</td></tr>
+                <tr><td>主要断点</td><td>两者都需用户理解项目约束</td><td>泡漫模式可逆性风险；漫枢上游护栏弱</td><td>别名/一致性错误会进入下游</td><td>漫枢缺资产需跨步骤回退</td><td>供应商失败恢复均未同口径验证</td><td>重生成以片段或分镜为最小单元，暂未见结果内部局部调整</td><td>生成成功不等于声音、版本和文件可交付</td></tr>
+                <tr><td>Solo机制</td><td>保留完整源剧本与项目约束</td><td>代码分集、人工保护、解析版本采用</td><td>稳定标识、采用版本、分层状态</td><td>当前分镜原地补齐全部依赖</td><td>任务组、生成任务、结果版本与失败隔离</td><td>记录状态、参数和结果，支持查看与复用</td><td>声音、采用、对象存储三重交付闸门</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="matrix-scroll journey-view" data-journey-view="pop" hidden>
+            <table class="journey-matrix">
+              <thead><tr><th>泡漫旅程</th><th>1 项目设定</th><th>2 分集</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <tbody>
+                <tr><td>用户目标</td><td>建立可生产项目</td><td>剧集边界正确完整</td><td>参考资产可复用</td><td>生成任务可检查</td><td>快速取得候选</td><td>查看并复用生成记录</td><td>交给人工后期</td></tr>
+                <tr><td>用户动作</td><td>创建项目，导入完整剧本/分镜</td><td>检查、修订自动识别结果</td><td>修订别名，生成/导入资产，绑定音色</td><td>检查参考、双提示词与模型</td><td>批量或单条提交</td><td>查看历史；复用结果或按片段重新生成</td><td>配置/检查配音并导出</td></tr>
+                <tr><td>系统反馈</td><td>展示导入内容和基础约束</td><td>自动分段、手动拆分、修订与返回</td><td>角色卡、造型、视图和声音入口</td><td>生成片段、分镜与任务包</td><td>展示任务、参数与结果</td><td>保存每次生成的状态、参数和结果</td><td>展示台词、音色和导出入口</td></tr>
+                <tr><td>用户决策</td><td>内容完整后继续</td><td>采用当前分集边界</td><td>采用可用资产与声音</td><td>确认或局部编辑后提交</td><td>等待、重试或继续</td><td>查看、复用或重新生成</td><td>确认素材包进入后期</td></tr>
+                <tr><td>状态变化</td><td>项目：草稿</td><td>分集 + 已采用解析版本</td><td>角色/造型/音色 + 已采用引用</td><td>片段/分镜/提示词版本/资产引用</td><td>生成任务 + 媒体版本</td><td>生成记录：状态 + 参数 + 结果</td><td>已采用结果 → 导出包</td></tr>
+                <tr><td>阻力 / 风险</td><td>输入格式影响识别</td><td>手动拆分后当前路径无法切回自动</td><td>别名错误会向下游扩散；声音硬拦截待复测</td><td>自动结果的依赖解释仍需补测</td><td>多结果行为未完成同口径实测</td><td>暂未见结果内部局部调整，需按片段重新生成</td><td>声音是否强校验需同任务复测</td></tr>
+                <tr><td>证据</td><td><span class="badge">A/B</span></td><td><button class="evidence-link" data-evidence-id="E01">E01</button></td><td><button class="evidence-link" data-evidence-id="E03">E03</button> <button class="evidence-link" data-evidence-id="E07">E07</button></td><td><button class="evidence-link" data-evidence-id="E05">E05</button></td><td><button class="evidence-link" data-evidence-id="E05">E05</button> <span class="badge pending">待补测</span></td><td><button class="evidence-link" data-evidence-id="E05">E05</button></td><td><button class="evidence-link" data-evidence-id="E07">E07</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="matrix-scroll journey-view" data-journey-view="manyu" hidden>
+            <table class="journey-matrix">
+              <thead><tr><th>漫枢旅程</th><th>1 项目设定</th><th>2 片段</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <tbody>
+                <tr><td>用户目标</td><td>选择专业生产起点</td><td>保存内容边界</td><td>建立项目资产池</td><td>逐镜头校对依赖</td><td>控制模式并取得候选</td><td>查看并复用生成记录</td><td>合并所选视频</td></tr>
+                <tr><td>用户动作</td><td>创建项目和片段，可输入或跳过剧本</td><td>创建片段并保存内容</td><td>提取/增补，批量或单项生成/上传，配置音色</td><td>自动拆分后逐条编辑、插入、@召回</td><td>选参考/首帧/首尾帧、模型与数量</td><td>查看历史；复用结果或按分镜重新生成</td><td>选择分镜视频并一键合成</td></tr>
+                <tr><td>系统反馈</td><td>提供更自由的入口</td><td>形成片段列表</td><td>展示分类资产、状态和生成入口</td><td>预填双提示词、引用与分类召回</td><td>展示多个任务与历史结果</td><td>保存每次生成的状态、参数和结果</td><td>生成可查看、下载的完整视频</td></tr>
+                <tr><td>用户决策</td><td>从剧本或资产开始</td><td>是否进入资产提取</td><td>筛选、补充并绑定可用资产</td><td>绑定引用并提交</td><td>比较候选质量</td><td>查看、复用或重新生成</td><td>确认视频拼接结果</td></tr>
+                <tr><td>状态变化</td><td>项目/片段：草稿</td><td>片段边界已保存</td><td>资产 + 候选媒体</td><td>分镜表/提示词版本/资产引用</td><td>任务组/生成任务/结果版本（行为推断）</td><td>生成记录：状态 + 参数 + 结果</td><td>已选视频 → 合成结果</td></tr>
+                <tr><td>阻力 / 风险</td><td>要求用户理解更多对象关系</td><td>独立分集护栏弱，错误边界可继续下传</td><td>占位/质量不足资产可进入下游；样本需人工筛选</td><td>缺资产时需回资产步骤处理后再返回</td><td>批量模式范围有限；失败恢复未完整验证</td><td>暂未见结果内部局部调整，需按分镜重新生成</td><td>未发现配音、字幕、背景音乐、转场入口；声音待验证</td></tr>
+                <tr><td>证据</td><td><button class="evidence-link" data-evidence-id="E02">E02</button></td><td><button class="evidence-link" data-evidence-id="E02">E02</button></td><td><button class="evidence-link" data-evidence-id="E04">E04</button></td><td><button class="evidence-link" data-evidence-id="E06">E06</button></td><td><button class="evidence-link" data-evidence-id="E08">E08</button></td><td><button class="evidence-link" data-evidence-id="E06">E06</button></td><td><button class="evidence-link" data-evidence-id="E09">E09</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="decision-callout"><div class="metric-value">2</div><div><strong>两个核心断点</strong><p>泡漫：上游结果可逆性。漫枢：当前步骤依赖闭环。太行Solo必须同时解决。</p></div><div class="inline-badges"><button class="evidence-link" data-evidence-id="E01">E01</button><button class="evidence-link" data-evidence-id="E06">E06</button></div></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4" data-depth="deep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">04</div>
+          <div><div class="eyebrow">返工半径</div><h2>正常、修正、失败三条路径必须分开</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>一旦分集错、资产缺、生成失败或声音变化，用户需要回退多远？哪些结果会失效？</p>
+        </header>
+
+        <div class="path-stack" aria-label="三类生产路径">
+          <div class="path-lane"><div class="path-label">正常路径<small>稳定前进</small></div><div class="path-step">确认上一步</div><div class="path-step">完成当前任务</div><div class="path-step">系统写入状态</div><div class="path-step">用户选择采用</div><div class="path-step">通过完成闸门</div><div class="path-step">进入下一步</div></div>
+          <div class="path-lane"><div class="path-label">修正路径<small>保留历史</small></div><div class="path-step">发现业务问题</div><div class="path-step">定位责任对象<small>分集 / 资产 / 分镜</small></div><div class="path-step">创建新版本</div><div class="path-step">标记受影响对象</div><div class="path-step">最小单元重做</div><div class="path-step">重新采用</div></div>
+          <div class="path-lane"><div class="path-label">失败路径<small>隔离技术失败</small></div><div class="path-step">生成任务失败 / 超时</div><div class="path-step">系统记录失败状态与错误码</div><div class="path-step">只重试失败任务</div><div class="path-step">成功结果不重跑</div><div class="path-step">幂等防重复</div><div class="path-step">不重复计费</div></div>
+        </div>
+
+        <div class="table-shell rework-table">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>触发事件</th><th>竞品暴露的问题</th><th>太行Solo修复位置</th><th>影响范围</th><th>版本、成本与预期行为</th></tr></thead>
+              <tbody>
+                <tr><td><strong>分集边界错误</strong><br><button class="evidence-link" data-evidence-id="E01">E01</button></td><td>泡漫手动模式当前路径难以回到自动</td><td>分集页原地修正、重新解析、比较并采用版本</td><td>受影响分集及其下游；原始文本不变</td><td>原文只读保留，新解析不覆盖人工版；用户敢于纠错而不是带错继续。</td></tr>
+                <tr><td><strong>分镜缺少资产</strong><br><button class="evidence-link" data-evidence-id="E06">E06</button></td><td>漫枢需离开分镜回资产页筛选/绑定</td><td>当前分镜展示缺失依赖，一键生成、选择、绑定</td><td>当前分镜 / 片段</td><td>只允许已生成且已采用资产提交高成本任务；减少跨页往返和漏选。</td></tr>
+                <tr><td><strong>单个任务失败</strong></td><td>批量若没有隔离，容易整批重跑</td><td>任务组内重试失败的生成任务</td><td>单个结果版本</td><td>同一幂等范围不重复创建或计费；成功结果不受影响。</td></tr>
+                <tr><td><strong>角色图 / 声音改变</strong></td><td>下游引用可能静默过期</td><td>资产详情与受影响分镜同步提示</td><td>引用该版本的分镜和视频</td><td>旧结果保留并标记“需复核”，不自动删除；变更影响可见。</td></tr>
+                <tr><td><strong>候选结果不可用</strong></td><td>竞品以片段或分镜为单位重新生成，未见结果内部局部调整</td><td>保存每次生成的状态、参数和结果，支持查看、复用与最小单元重生成</td><td>当前分镜 / 片段</td><td>新记录不覆盖旧记录；1.0不设计结果内部局部调整。</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="radius-definition"><code>返工半径 = 错误导致必须重做的对象数量</code><div class="radius-metrics"><span>受影响片段 / 分镜数</span><span>失败导致重跑任务数</span><span>补依赖跨页跳转次数</span><span>变更影响标记覆盖率</span></div></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5" data-summary="keep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">05</div>
+          <div><div class="eyebrow">生产机制</div><h2>从能力列表升级为五个生产机制</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>哪些设计真正决定生产效率？为什么它们进入1.0，而另一些功能可以后置？</p>
+        </header>
+
+        <div class="mechanism-map" aria-label="五个生产机制">
+          <div class="mechanism-node"><span>01</span><strong>边界控制</strong><small>源文本、解析版本、分集采用</small></div>
+          <div class="mechanism-node"><span>02</span><strong>两层生产单元</strong><small>分镜编辑，片段生成与采用</small></div>
+          <div class="mechanism-node"><span>03</span><strong>稳定资产上下文</strong><small>稳定标识、采用版本、依赖状态</small></div>
+          <div class="mechanism-node"><span>04</span><strong>任务与结果版本</strong><small>任务组、生成任务、结果、失败隔离</small></div>
+          <div class="mechanism-node"><span>05</span><strong>交付就绪状态</strong><small>声音、采用、对象存储同时通过</small></div>
+        </div>
+
+        <div class="table-shell">
+          <div class="table-scroll">
+            <table class="mechanism-table">
+              <thead><tr><th>生产机制</th><th>竞品事实</th><th>暴露的生产问题</th><th>太行Solo规则</th><th>预期行为变化</th><th>观测指标</th></tr></thead>
+              <tbody>
+                <tr><td><strong>边界控制</strong></td><td>泡漫有独立分集确认；漫枢片段起点更自由</td><td>强流程可能不可逆；自由流程可能缺少护栏</td><td>代码识别、保留原文、人工修订、重新解析与采用版本；Dify从确认分集后开始</td><td>错误在进入资产和生成前被发现，修正不丢方案</td><td>原文遗漏率、人工修正次数、分集确认耗时</td></tr>
+                <tr><td><strong>两层生产单元</strong></td><td>泡漫以片段组织生产；漫枢以分镜表提供控制</td><td>大单元牺牲局部控制；小单元增加任务成本</td><td>分镜粒度编辑；片段粒度生成、计费、重试和采用</td><td>批量得到初稿，返工限制在单片段</td><td>每个采用片段的修改数、平均重新生成范围</td></tr>
+                <tr><td><strong>稳定资产上下文</strong></td><td>两款均有项目资产和显式引用；资产状态展示深度不同</td><td>名称引用、未采用资产与不稳定多视图会传递漂移</td><td>角色、造型、音色分层；固定身份锚点；召回显示生成/采用/复核状态</td><td>用户不从空提示词开始，也无需离开当前分镜找资产</td><td>资产一次采用率、首次生成可用率、依赖闭环时长</td></tr>
+                <tr><td><strong>任务与结果版本</strong></td><td>两款均保留生成历史，并支持按片段或分镜重新生成</td><td>不可分割任务会整批失败、覆盖结果和重复扣费</td><td><code>output_count</code>拆成任务组与独立生成任务；保存状态、参数和结果；失败单独重试；转存对象存储</td><td>先批量跑，再查看、复用或重新生成最小单元，不必整批重跑</td><td>失败隔离率、幂等拦截率、最终采用结果成本</td></tr>
+                <tr><td><strong>交付就绪状态</strong></td><td>泡漫配音/导出更可见；漫枢已验证视频拼接，声音未验证</td><td>调用成功、可预览和可交付容易混为一谈</td><td>无声仅预览；临时链接未转存不可交付；只导出采用版本</td><td>不再下载后才发现声音、链接或版本问题</td><td>交付通过率、音轨问题率、对象存储成功率、导出后返工率</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="object-models" hidden>
+          <div class="object-model"><h3>生产结构</h3><code>Episode → Segment → Shot<br>Shot：编辑 / 引用 / 双提示词<br>Segment：生成 / 计费 / 重试 / 采用</code></div>
+          <div class="object-model"><h3>资产结构</h3><code>Character + Look + PerformanceStyle<br>+ Voice + ReferenceView<br>stable_id + adopted_version</code></div>
+          <div class="object-model"><h3>生成结构</h3><code>GenerationGroup → GenerationJob<br>→ ResultVersion → adopted / rejected<br>failure_isolation + idempotency</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6" data-depth="deep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">06</div>
+          <div><div class="eyebrow">页面证据</div><h2>主流程对比</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>结论来自哪里？哪些是页面事实，哪些仍是推断或待验证项？</p>
+        </header>
+
+        <div class="evidence-grid">
+          <figure class="evidence-card" data-id="E01" data-title="泡漫｜分集与模式切换" data-proof="存在独立分集确认；当前实测路径存在模式可逆性风险。" data-limit="不能证明所有账号、项目或版本都无法恢复。" data-solo="版本化分集、重新解析、差异比较与选择采用。">
+            <button class="evidence-media" type="button" aria-label="查看E01截图"><img src="assets/evidence/E01.jpg" alt="泡漫分集与模式切换截图"><span class="evidence-placeholder"><strong>E01</strong><span>分集与模式切换<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜分集与模式切换</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>自动分段、手动拆分、修订、返回入口</span></div><div class="evidence-field"><b>能证明</b><span>独立确认存在；当前路径可逆性有风险</span></div><div class="evidence-field"><b>不能证明</b><span>所有项目或版本都无法恢复</span></div><div class="evidence-field"><b>Solo</b><span>分集版本化，重新解析后选择采用</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E02" data-title="漫枢｜项目片段与剧本入口" data-proof="起点自由，片段边界更多依赖用户输入。" data-limit="不能证明系统没有其他分集能力。" data-solo="给自由度之前建立原文与边界护栏。">
+            <button class="evidence-media" type="button" aria-label="查看E02截图"><img src="assets/evidence/E02.jpg" alt="漫枢项目片段与剧本入口截图"><span class="evidence-placeholder"><strong>E02</strong><span>项目片段与剧本入口<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜项目片段与剧本入口</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>创建片段、输入/跳过剧本、片段边界</span></div><div class="evidence-field"><b>能证明</b><span>专业起点更自由，上游边界依赖用户</span></div><div class="evidence-field"><b>不能证明</b><span>系统没有其他自动分集能力</span></div><div class="evidence-field"><b>Solo</b><span>原文与边界版本先于专业自由度</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E03" data-title="泡漫｜角色卡、造型、视图与音色" data-proof="角色、造型、参考视图与声音关系更接近下游生产就绪。" data-limit="非同模型控制实验，不能证明底层模型更强。" data-solo="角色、造型、参考视图、音色分层保存。">
+            <button class="evidence-media" type="button" aria-label="查看E03截图"><img src="assets/evidence/E03.jpg" alt="泡漫角色卡与音色截图"><span class="evidence-placeholder"><strong>E03</strong><span>角色卡、造型与音色<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜角色卡、造型与音色</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>角色、造型数量、人物/服装视图、声音绑定</span></div><div class="evidence-field"><b>能证明</b><span>资产组织更接近生产就绪</span></div><div class="evidence-field"><b>不能证明</b><span>非同模型实验，不能比较模型优劣</span></div><div class="evidence-field"><b>Solo</b><span>角色、造型、视图和声音分层</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E04" data-title="漫枢｜角色多视图与音色" data-proof="项目资产和角色音色可见；样本存在人工筛选负担。" data-limit="不能由单组样本归纳整体人物质量。" data-solo="候选池、采用版本与一致性检查。">
+            <button class="evidence-media" type="button" aria-label="查看E04截图"><img src="assets/evidence/E04.jpg" alt="漫枢角色多视图与音色截图"><span class="evidence-placeholder"><strong>E04</strong><span>角色多视图与音色<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜角色多视图与音色</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>多视图组图、资产状态、音色入口</span></div><div class="evidence-field"><b>能证明</b><span>项目资产与音色可见，样本需筛选</span></div><div class="evidence-field"><b>不能证明</b><span>单样本不能归纳整体人物质量</span></div><div class="evidence-field"><b>Solo</b><span>候选、采用与一致性检查分开</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E05" data-title="泡漫｜片段生产编辑区" data-proof="参考资产、双提示词、模型与批量/单条生成集中可见。" data-limit="不能据页面推断内部提示词模板。" data-solo="双提示词分存，并编译稳定资产引用。">
+            <button class="evidence-media" type="button" aria-label="查看E05截图"><img src="assets/evidence/E05.jpg" alt="泡漫片段生产编辑区截图"><span class="evidence-placeholder"><strong>E05</strong><span>片段生产编辑区<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜片段生产编辑区</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>参考资产、双提示词、模型、批量/单条</span></div><div class="evidence-field"><b>能证明</b><span>自动提示词与集中式生产上下文可见</span></div><div class="evidence-field"><b>不能证明</b><span>无法反推出内部提示词模板</span></div><div class="evidence-field"><b>Solo</b><span>双提示词分存，稳定引用编译</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E06" data-title="漫枢｜分镜编辑与@召回" data-proof="分类召回和状态更显式；实测缺资产存在跨步骤回退。" data-limit="不能外推所有项目都必然回退。" data-solo="在当前分镜完成依赖生成、选择、绑定与回写。">
+            <button class="evidence-media" type="button" aria-label="查看E06截图"><img src="assets/evidence/E06.jpg" alt="漫枢分镜与召回截图"><span class="evidence-placeholder"><strong>E06</strong><span>分镜编辑与@召回<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜分镜编辑与@召回</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>参考、资产状态、素材分类、生成入口</span></div><div class="evidence-field"><b>能证明</b><span>分类召回显式；当前样本有跨步骤回退</span></div><div class="evidence-field"><b>不能证明</b><span>不能外推所有项目都必然回退</span></div><div class="evidence-field"><b>Solo</b><span>当前分镜原地完成依赖闭环</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E07" data-title="泡漫｜视频与独立音轨导出" data-proof="导出提供视频片段、独立配音音轨和视频+音频混合包。" data-limit="不能仅凭导出选项证明音轨完整、映射正确或已通过强校验。" data-solo="声音不独立成页，但必须进入交付闸门。">
+            <button class="evidence-media" type="button" aria-label="查看E07截图"><img src="assets/evidence/E07.jpg" alt="泡漫视频与独立音轨导出截图"><span class="evidence-placeholder"><strong>E07</strong><span>视频与独立音轨导出<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>泡漫｜视频与独立音轨导出</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>分集/片段范围、视频、独立音轨、混合包</span></div><div class="evidence-field"><b>能证明</b><span>声音素材与视频可按不同交付包导出</span></div><div class="evidence-field"><b>不能证明</b><span>音轨完整、映射正确或已通过强校验</span></div><div class="evidence-field"><b>Solo</b><span>声音进入交付状态，不独立成页</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card" data-id="E08" data-title="漫枢｜分镜列表、批量与成片入口" data-proof="分镜任务按列表组织，并提供批量生成、批量下载、预览与一键成片入口。" data-limit="不能仅凭入口证明批量任务的失败隔离、恢复机制或最终成片质量。" data-solo="分镜状态、批量动作范围与任务结果必须显式。">
+            <button class="evidence-media" type="button" aria-label="查看E08截图"><img src="assets/evidence/E08.jpg" alt="漫枢分镜列表、批量与成片入口截图"><span class="evidence-placeholder"><strong>E08</strong><span>分镜列表与批量入口<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜分镜列表、批量与成片入口</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>分镜任务、生成参数、批量生成/下载、成片入口</span></div><div class="evidence-field"><b>能证明</b><span>列表级生产控制和成片入口可见</span></div><div class="evidence-field"><b>不能证明</b><span>批量失败隔离、恢复机制与成片质量</span></div><div class="evidence-field"><b>Solo</b><span>任务状态、操作范围与结果显式对应</span></div></div></figcaption>
+          </figure>
+
+          <figure class="evidence-card is-right" data-id="E09" data-title="漫枢｜一键成片预览与下载" data-proof="所选分镜进入完整视频预览，页面提供下载与再次成片入口。" data-limit="不能由当前页面确认配音、字幕、背景音乐、转场编辑或音轨校验能力。" data-solo="采用版本、合成结果、声音状态与交付状态分开建模。">
+            <button class="evidence-media" type="button" aria-label="查看E09截图"><img src="assets/evidence/E09.jpg" alt="漫枢一键成片预览与下载截图"><span class="evidence-placeholder"><strong>E09</strong><span>一键成片预览与下载<br>截图待补</span></span></button>
+            <figcaption class="evidence-copy"><header><h3>漫枢｜一键成片预览与下载</h3><span class="badge primary">A 实测</span></header><div class="evidence-fields"><div class="evidence-field"><b>画面保留</b><span>完整视频预览、分镜条、下载与再次成片</span></div><div class="evidence-field"><b>能证明</b><span>所选分镜可进入整片预览与下载</span></div><div class="evidence-field"><b>不能证明</b><span>配音、字幕、背景音乐、转场或音轨校验</span></div><div class="evidence-field"><b>Solo</b><span>采用、合成、声音与交付状态分层</span></div></div></figcaption>
+          </figure>
+        </div>
+
+        <div class="evidence-rule"><div><div class="section-label">正式汇报规则</div><h3>E01—E09已补齐原图</h3></div><ul><li>九张截图均保留页面上下文，可点击放大查看。</li><li>当前为内部汇报原图，外发前再按口径脱敏。</li><li>项目名、账号、余额和人物信息需会前复核。</li><li>保留产品、页面、日期、动作和证据等级。</li><li>文件固定命名，后续替换无需改HTML结构。</li><li>截图证明能力边界，不证明内部实现。</li></ul></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch7" data-depth="deep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">07</div>
+          <div><div class="eyebrow">用户故事地图</div><h2>太行Solo P0是一条可走通的生产骨架</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>P0如何沿用户任务形成完整闭环？P1/P2在什么骨架上增加稳定、效率与规模？</p>
+        </header>
+
+        <div class="map-tool">
+          <div class="tool-toolbar">
+            <span class="tool-title">横向：用户活动骨架　纵向：发布切片与完成闸门</span>
+            <div class="segment-control" role="group" aria-label="故事地图层级">
+              <button class="segment-btn active" type="button" data-map-filter="all" aria-pressed="true">全部路线</button>
+              <button class="segment-btn" type="button" data-map-filter="p0" aria-pressed="false">P0</button>
+              <button class="segment-btn" type="button" data-map-filter="p1" aria-pressed="false">P1</button>
+              <button class="segment-btn" type="button" data-map-filter="p2" aria-pressed="false">P2</button>
+            </div>
+          </div>
+          <div class="matrix-scroll">
+            <table class="story-map">
+              <thead><tr><th>故事层级</th><th>1 项目设定</th><th>2 分集确认</th><th>3 资产就绪</th><th>4 分镜确认</th><th>5 批量生成</th><th>6 历史记录</th><th>7 素材交付</th></tr></thead>
+              <tbody>
+                <tr data-map-level="context"><td>用户活动</td><td>建立生产项目</td><td>全文变成可生产分集</td><td>准备一致、可引用资产</td><td>剧情变成可生成任务</td><td>快速取得候选结果</td><td>查看记录并复用结果</td><td>交给人工后期</td></tr>
+                <tr data-map-level="context"><td>核心任务</td><td>导入完整剧本并保留来源</td><td>检查标题、边界与原文</td><td>合并别名，确认角色/造型/声音</td><td>校对片段、分镜、双提示词和依赖</td><td>设置已验证模型并并发提交</td><td>查看状态、参数和结果，复用或按最小单元重生成</td><td>检查声音与文件，导出采用素材</td></tr>
+                <tr data-map-level="p0"><td>P0 最小可运行骨架</td><td>完整剧本导入；源文本只读保存</td><td>代码识别；人工修正；重新解析；采用版本</td><td>Dify抽取归一；核心资产生图；稳定标识；采用参考；声音绑定</td><td>片段/分镜；双提示词；依赖清单；分层@；原地补齐；模型能力校验</td><td>10段异步并发；<code>output_count</code>；独立生成任务；状态；对象存储转存</td><td>保存每次状态、参数和结果；查看与复用；最小单元重生成；幂等</td><td>声音映射与音轨校验；只导出采用结果；干净素材包</td></tr>
+                <tr data-map-level="p1"><td>P1 稳定与效率</td><td>增量追加剧集、项目模板</td><td>边界差异对比、下游影响预览</td><td>自动一致性检查、更细声音/参考管理</td><td>连续性提示、尾帧/参考约束、自动质检</td><td>任务优先级与批次管理</td><td>历史筛选、结果对比、成本看板</td><td>基础字幕、片段合并、质检报告</td></tr>
+                <tr data-map-level="p2"><td>P2 规模与差异化</td><td>多项目模板与权限</td><td>剧本质量分析、多智能体审阅</td><td>自动资产路由与跨项目复用</td><td>自由画布、专业时间线</td><td>自动模型路由、多宫格降本</td><td>团队人效与策略学习</td><td>国内外双版本、一键海外交付</td></tr>
+                <tr data-map-level="gate"><td>P0完成闸门</td><td>原文无丢失</td><td>人工可纠错且保留版本</td><td>核心资产与声音可追溯</td><td>任一集不改库即可进入生成</td><td>并发、多结果、失败隔离成立</td><td>历史完整可复用，重生成不重复任务/计费</td><td>带声音、持久化、采用素材可下载</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <blockquote class="walking-story">作为太行Solo内部制作人，我导入完整剧本，修正分集；确认角色、造型、表演风格、声音和参考图；校对片段、分镜、双提示词与依赖；批量提交候选视频；只重试失败或不可用片段；最后导出仅含已采用版本、带可用声音的素材包。</blockquote>
+
+        <div class="acceptance-grid" aria-label="1.0七项技术护栏">
+          <div class="acceptance-gate"><b>01</b><strong>三份异构剧本</strong><span>可修正，不丢原文</span></div>
+          <div class="acceptance-gate"><b>02</b><strong>任一集全链直通</strong><span>不改数据库或重部署</span></div>
+          <div class="acceptance-gate"><b>03</b><strong>可用对白声音</strong><span>无声不得标记成功</span></div>
+          <div class="acceptance-gate"><b>04</b><strong>10段并发</strong><span>多结果，失败不扩散</span></div>
+          <div class="acceptance-gate"><b>05</b><strong>重试幂等</strong><span>不重复任务或计费</span></div>
+          <div class="acceptance-gate"><b>06</b><strong>自有对象存储</strong><span>临时地址自动转存</span></div>
+          <div class="acceptance-gate"><b>07</b><strong>采用版导出</strong><span>素材包只含采用结果</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch8" data-depth="deep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">08</div>
+          <div><div class="eyebrow">责任泳道</div><h2>用户、前端、后端、Dify、模型和对象存储如何接力</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>判断由谁做、状态由谁写、失败由谁恢复？Dify与智能体到底负责什么？</p>
+        </header>
+
+        <div class="matrix-shell">
+          <div class="matrix-scroll">
+            <table class="lane-matrix">
+              <thead><tr><th>责任泳道</th><th>1 导入</th><th>2 分集</th><th>3 资产</th><th>4 分镜</th><th>5 生成</th><th>6 历史 / 复用</th><th>7 导出</th></tr></thead>
+              <tbody>
+                <tr><td>内部制作人</td><td>选择完整剧本</td><td>校正边界并采用版本</td><td>合并别名，确认造型/声音/参考</td><td>校对分镜、提示词、依赖与模型</td><td>提交批次并观察状态</td><td>看历史、复用结果或按最小单元重生成</td><td>确认声音与素材包</td></tr>
+                <tr><td>前端</td><td>上传、显示原文与解析状态</td><td>差异修订、重解析、版本选择</td><td>展示分类资产、状态与采用操作</td><td>当前上下文展示依赖与分层召回</td><td>展示预估、任务组和生成任务状态</td><td>保留历史并限制重复提交</td><td>展示交付闸门和下载结果</td></tr>
+                <tr><td>业务后端</td><td>保存源剧本与项目状态</td><td>代码解析；保存解析版本/分集</td><td>保存稳定标识、关系、采用版本、声音映射</td><td>保存片段/分镜/提示词版本/资产引用</td><td>异步提交/轮询；幂等；成本；权限</td><td>保存状态、参数和结果；按最小单元重生成；幂等</td><td>校验采用/声音/对象存储；生成清单</td></tr>
+                <tr><td>Dify 工作流</td><td>不参与分集</td><td>从已确认分集后开始</td><td>资产抽取、别名建议、提示词编译、结构修复</td><td>生成结构、依赖清单、双提示词；编译@上下文</td><td>不等待分钟级任务，不记账</td><td>不写生成历史与复用状态</td><td>不决定可交付状态</td></tr>
+                <tr><td>模型 / 供应商</td><td>无</td><td>无</td><td>按适配层调用图片/声音能力</td><td>接收编译后的结构化上下文</td><td>返回任务状态、临时链接和错误</td><td>只重跑指定生成任务</td><td>不直接成为最终下载源</td></tr>
+                <tr><td>对象存储 / 交付层</td><td>保存源文件</td><td>保存版本快照</td><td>保存采用资产媒体</td><td>保存提示词与依赖快照</td><td>把临时结果持久化</td><td>保留历史，不覆盖采用版</td><td>组装只含采用结果的素材包</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="decision-callout"><div class="metric-value">规则</div><div><strong>Dify输出结构与建议，后端写业务事实</strong><p>分集、项目状态、版本、任务、幂等、成本、对象存储和导出归确定性后端；首版不让智能体充当生产状态机。</p></div><div class="inline-badges"><span class="badge primary">边界已确认</span></div></div>
+
+        <div class="table-shell failure-table">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>失败节点</th><th>可见状态</th><th>恢复动作</th><th>禁止行为</th></tr></thead>
+              <tbody>
+                <tr><td><strong>标题规则未识别</strong></td><td><code>parse_needs_review</code></td><td>保留全文，由用户手工建立或修正边界</td><td>丢弃未识别文本，或静默猜测后继续</td></tr>
+                <tr><td><strong>Dify结构不合法</strong></td><td><code>workflow_invalid_output</code></td><td>自动结构修复一次，仍失败则保留输入并提示重试</td><td>把自然语言直接写成业务对象</td></tr>
+                <tr><td><strong>分镜依赖缺失</strong></td><td><code>dependency_blocked</code></td><td>当前分镜原地生成、选择或绑定可用版本</td><td>提交生成后才报供应商错误</td></tr>
+                <tr><td><strong>生成超时 / 单任务失败</strong></td><td><code>job_failed / timeout</code></td><td>用原任务规格和幂等范围重试该任务</td><td>整批重跑或重复计费</td></tr>
+                <tr><td><strong>临时链接转存失败</strong></td><td><code>persist_failed</code></td><td>只重试文件转存，必要时重新拉取结果</td><td>把临时链接标记为可交付</td></tr>
+                <tr><td><strong>声音 / 音轨失败</strong></td><td><code>audio_not_ready</code></td><td>原生声音重试或最小语音合成兜底</td><td>把无声视频标记为成功交付</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch9" data-summary="keep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">09</div>
+          <div><div class="eyebrow">成效与实验</div><h2>从技术验收到产品成效：四类风险与验证闭环</h2></div>
+          <p class="chapter-question"><strong>本章关注</strong><br>七条技术验收通过后，怎么知道太行Solo真的比现有生产方式更有价值？</p>
+        </header>
+
+        <div class="outcome-tree">
+          <div class="northstar-node"><span>候选北极星 · 基线待测</span><strong>单位人日交付的“已采用、带声音视频片段数”</strong></div>
+          <div class="driver-grid">
+            <div class="driver"><b>周期</b><p>导入到首个已采用片段的时间</p></div>
+            <div class="driver"><b>质量</b><p>首轮生成采用率、资产一次采用率</p></div>
+            <div class="driver"><b>返工</b><p>平均重新生成次数、返工半径、补依赖往返</p></div>
+            <div class="driver"><b>成本</b><p>每个最终采用片段的总生成成本</p></div>
+            <div class="driver"><b>交付</b><p>声音、对象存储、采用版本同时通过的比例</p></div>
+          </div>
+          <div class="guardrail-row"><span>原文零丢失</span><span>不重复计费</span><span>单任务失败不扩散</span><span>无声结果不冒充交付</span></div>
+        </div>
+
+        <div class="risk-grid" hidden>
+          <article class="risk-card"><header><h3>价值风险</h3><span>高</span></header><p>内部制作人是否真的减少等待、跨页操作和无效重新生成？</p><small>验证：先测现有人工基线，再用同类剧本跑端到端试点。</small></article>
+          <article class="risk-card"><header><h3>易用性风险</h3><span>中高</span></header><p>用户能否理解对象层级、采用版本、依赖状态和交付闸门？</p><small>验证：用真实任务原型观察完成行为，不以“看懂页面”替代。</small></article>
+          <article class="risk-card"><header><h3>可行性风险</h3><span>高</span></header><p>单研发能否同时保证并发、声音、幂等、对象存储、版本和恢复？</p><small>验证：一条默认模型路径做技术尖刺，先攻最危险链路。</small></article>
+          <article class="risk-card"><header><h3>可持续风险</h3><span>待验证</span></header><p>最终采用结果的真实成本、模型稳定性和合规是否可接受？</p><small>验证：系统自动记录调用、生成、复用、重新生成和总成本；1.0不先做套餐。</small></article>
+        </div>
+
+        <div class="table-shell">
+          <div class="table-scroll">
+            <table class="experiment-table">
+              <thead><tr><th>步骤</th><th>当前条件</th><th>目标条件</th><th>最小实验</th><th>产出与判定</th></tr></thead>
+              <tbody>
+                <tr><td><strong>X0 基线</strong></td><td>产出、周期、采用率和成本没有统一口径</td><td>得到真实当前基线</td><td>选3份格式不同的真实剧本，记录现有人工流程节点时间、生成次数、采用数和交付问题</td><td>形成可比较基线；若无法测量，先补埋点与口径</td></tr>
+                <tr><td><strong>X1 任务原型</strong></td><td>关键对象和状态对制作人是否可理解未知</td><td>用户完成P0并知道错误在哪里修</td><td>完成分集修正、缺失资产闭环、单条重试、采用导出四个高风险任务</td><td>记录完成率、求助点、误操作和回退路径；阈值待确认</td></tr>
+                <tr><td><strong>X2 技术尖刺</strong></td><td>声音、并发、幂等、对象存储和失败恢复风险最高</td><td>一条默认模型链满足七条护栏</td><td>真实调用：10段并发、多结果、失败注入、重复点击、链接转存、声音校验</td><td>关键护栏无法成立则调整架构或范围，不进入全面页面开发</td></tr>
+                <tr><td><strong>X3 端到端试点</strong></td><td>技术可用不等于生产有价值</td><td>关键成效相对基线达到预设阈值</td><td>内部团队完成“导入 → 已采用带声音素材包”</td><td>比较北极星、质量、返工、成本与护栏，做继续/调整/停止判断</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="decision-callout"><div class="metric-value">双门</div><div><strong>七条验收守住“系统不坏”，成效树回答“产品是否值得”</strong><p>先跑通完整流程，再根据真实生产结果决定后续优化。</p></div><span class="badge pending">先验证流程闭环</span></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch10" data-summary="keep">
+      <div class="chapter-inner">
+        <header class="chapter-head">
+          <div class="chapter-no">10</div>
+          <div><div class="eyebrow">1.0执行结论</div><h2>先把完整生产流程跑通，不再增加前置确认</h2></div>
+          <p class="chapter-question"><strong>验证目标</strong><br>完整剧本能否稳定走到可交付的带声音视频素材？</p>
+        </header>
+
+        <div class="decision-callout">
+          <div class="metric-value">1.0</div>
+          <div><strong>唯一目标：跑通完整生产闭环</strong><p>完整剧本 → 分集 → 资产 → 分镜 → 生成 → 声音 → 素材交付</p></div>
+          <span class="badge decision">已确认</span>
+        </div>
+
+        <section style="margin-top: 28px;">
+          <div class="section-label">当前执行口径</div>
+          <div class="confirmed-list">
+            <div class="confirmed-row"><b>闭环范围</b><span>完整剧本到可交付素材，所有关键步骤可连续完成。</span></div>
+            <div class="confirmed-row"><b>完成标准</b><span>生成结果可查看历史、按片段或分镜重新生成，并完成声音与文件交付。</span></div>
+            <div class="confirmed-row"><b>推进方式</b><span>用真实项目边跑边修；不另设硬性时间门槛，首版不扩展非闭环能力。</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="closing-band">
+      <div class="closing-inner">
+        <div><div class="eyebrow">汇报结论</div><h2>不比竞品多做一套功能，而要更早发现错误、更小范围修复错误。</h2><p>并把每次生成、复用、重新生成与成本沉淀为下一轮生产效率。</p></div>
+        <div class="closing-meta">太行Solo · 内部汇报<br>分析版本 V1.0 · 2026.08<br>内部资料 / 禁止外传</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="source-footer">
+    <div class="source-inner">
+      <div class="section-label">来源与边界</div>
+      <details><summary>证据等级与研究边界</summary><ul><li>A：2026-08-25至08-26登录态页面和用户补充截图直接观察。</li><li>B：竞品官方说明、官方手册或公开资料。</li><li>推断：基于页面输出、对象关系或流程行为的合理分析，不等同内部实现事实。</li><li>太行Solo决策：太行Solo已经确认的1.0产品与技术边界。</li></ul></details>
+      <details><summary>内部分析文件</summary><ul><li>《泡漫与漫枢竞品分析报告正式版》V1.10。</li><li>《领导意见整合版：产品方向与1.0决策基线》。</li><li>《太行Solo泡漫与漫枢管理层深度汇报10章内容线框稿》V0.2。</li></ul></details>
+      <details><summary>仍需补做的同口径实测</summary><ul><li>同一剧本、同一模型、同一角色设定下比较资产与分镜产出。</li><li>完整验证两款产品的批量、多结果、取消、失败重试、历史还原和成本。</li><li>分别在未选/已选音色下生成同一视频并检查音轨、对白、音色映射与额外成本。</li><li>测试资产版本或声音变化后，下游分镜和视频是否正确标记失效。</li></ul></details>
+    </div>
+  </footer>
+
+  <dialog class="evidence-dialog" id="evidenceDialog">
+    <div class="dialog-header"><div><div class="eyebrow" id="dialogEvidenceId">E01</div><h3 id="dialogEvidenceTitle">页面证据</h3></div><button class="dialog-close" type="button" aria-label="关闭证据详情" title="关闭">×</button></div>
+    <div class="evidence-dialog-body">
+      <div class="dialog-image-wrap"><img id="dialogEvidenceImage" alt="页面证据截图"><div class="dialog-image-placeholder" id="dialogImagePlaceholder">截图尚未放入 assets/evidence/</div></div>
+      <div class="dialog-evidence-copy"><div class="inline-badges"><span class="badge primary">页面证据</span><span class="badge">边界可追溯</span></div><dl><dt>能证明</dt><dd id="dialogProof"></dd><dt>不能证明</dt><dd id="dialogLimit"></dd><dt>对太行Solo的含义</dt><dd id="dialogSolo"></dd><dt>截图文件</dt><dd id="dialogPath"></dd></dl></div>
+    </div>
+  </dialog>
+
+  <dialog class="drawer-dialog" id="evidenceIndexDialog">
+    <div class="dialog-header"><div><div class="eyebrow">证据索引</div><h3>页面证据索引</h3></div><button class="dialog-close" type="button" aria-label="关闭证据索引" title="关闭">×</button></div>
+    <div class="drawer-body">
+      <div class="drawer-item"><b>E01</b><div><strong>泡漫 · 分集与模式切换</strong><p>独立确认与模式可逆性风险</p></div><button class="evidence-link" data-evidence-id="E01">查看</button></div>
+      <div class="drawer-item"><b>E02</b><div><strong>漫枢 · 项目片段与剧本入口</strong><p>自由起点与上游边界护栏</p></div><button class="evidence-link" data-evidence-id="E02">查看</button></div>
+      <div class="drawer-item"><b>E03</b><div><strong>泡漫 · 角色卡、造型与音色</strong><p>更接近生产就绪的资产关系</p></div><button class="evidence-link" data-evidence-id="E03">查看</button></div>
+      <div class="drawer-item"><b>E04</b><div><strong>漫枢 · 角色多视图与音色</strong><p>项目资产可见，样本需人工筛选</p></div><button class="evidence-link" data-evidence-id="E04">查看</button></div>
+      <div class="drawer-item"><b>E05</b><div><strong>泡漫 · 片段生产编辑区</strong><p>双提示词、参考与批量生产上下文</p></div><button class="evidence-link" data-evidence-id="E05">查看</button></div>
+      <div class="drawer-item"><b>E06</b><div><strong>漫枢 · 分镜编辑与@召回</strong><p>显式状态与跨步骤依赖回退</p></div><button class="evidence-link" data-evidence-id="E06">查看</button></div>
+      <div class="drawer-item"><b>E07</b><div><strong>泡漫 · 视频与独立音轨导出</strong><p>视频、独立配音音轨与混合包</p></div><button class="evidence-link" data-evidence-id="E07">查看</button></div>
+      <div class="drawer-item"><b>E08</b><div><strong>漫枢 · 分镜列表与批量入口</strong><p>列表级生产控制与一键成片入口</p></div><button class="evidence-link" data-evidence-id="E08">查看</button></div>
+      <div class="drawer-item"><b>E09</b><div><strong>漫枢 · 一键成片预览与下载</strong><p>所选分镜进入整片预览和交付</p></div><button class="evidence-link" data-evidence-id="E09">查看</button></div>
+    </div>
+  </dialog>
+
+  <script>
+    const evidenceData = {};
+    document.querySelectorAll('.evidence-card').forEach((card) => {
+      const image = card.querySelector('img');
+      evidenceData[card.dataset.id] = {
+        id: card.dataset.id,
+        title: card.dataset.title,
+        proof: card.dataset.proof,
+        limit: card.dataset.limit,
+        solo: card.dataset.solo,
+        src: image.getAttribute('src')
+      };
+
+      const media = card.querySelector('.evidence-media');
+      image.addEventListener('load', () => media.classList.add('has-image'));
+      image.addEventListener('error', () => {
+        image.hidden = true;
+        media.classList.remove('has-image');
+      });
+      if (image.complete) {
+        if (image.naturalWidth > 0) media.classList.add('has-image');
+        else image.hidden = true;
+      }
+    });
+
+    const evidenceDialog = document.getElementById('evidenceDialog');
+    const evidenceIndexDialog = document.getElementById('evidenceIndexDialog');
+    const dialogImage = document.getElementById('dialogEvidenceImage');
+    const dialogPlaceholder = document.getElementById('dialogImagePlaceholder');
+
+    function openEvidence(id) {
+      const data = evidenceData[id];
+      if (!data) return;
+      if (evidenceIndexDialog.open) evidenceIndexDialog.close();
+      document.getElementById('dialogEvidenceId').textContent = data.id;
+      document.getElementById('dialogEvidenceTitle').textContent = data.title;
+      document.getElementById('dialogProof').textContent = data.proof;
+      document.getElementById('dialogLimit').textContent = data.limit;
+      document.getElementById('dialogSolo').textContent = data.solo;
+      document.getElementById('dialogPath').textContent = data.src;
+      dialogPlaceholder.hidden = false;
+      dialogImage.hidden = true;
+      dialogImage.src = data.src;
+      dialogImage.onload = () => {
+        dialogImage.hidden = false;
+        dialogPlaceholder.hidden = true;
+      };
+      dialogImage.onerror = () => {
+        dialogImage.hidden = true;
+        dialogPlaceholder.hidden = false;
+      };
+      evidenceDialog.showModal();
+    }
+
+    document.addEventListener('click', (event) => {
+      const evidenceLink = event.target.closest('[data-evidence-id]');
+      if (evidenceLink) openEvidence(evidenceLink.dataset.evidenceId);
+
+      const media = event.target.closest('.evidence-media');
+      if (media) openEvidence(media.closest('.evidence-card').dataset.id);
+
+      const close = event.target.closest('.dialog-close');
+      if (close) close.closest('dialog').close();
+    });
+
+    [evidenceDialog, evidenceIndexDialog].forEach((dialog) => {
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+
+    document.getElementById('openEvidenceIndex').addEventListener('click', () => evidenceIndexDialog.showModal());
+    document.getElementById('printReport').addEventListener('click', () => window.print());
+
+    document.querySelectorAll('[data-mode]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const summary = button.dataset.mode === 'summary';
+        document.body.classList.toggle('summary-mode', summary);
+        document.querySelectorAll('[data-mode]').forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        if (summary) document.getElementById('ch1').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('[data-journey]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.journey;
+        document.querySelectorAll('[data-journey]').forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        document.querySelectorAll('[data-journey-view]').forEach((view) => {
+          view.hidden = view.dataset.journeyView !== target;
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-map-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.mapFilter;
+        document.querySelectorAll('[data-map-filter]').forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        document.querySelectorAll('[data-map-level]').forEach((row) => {
+          row.hidden = filter !== 'all' && !['context', 'gate', filter].includes(row.dataset.mapLevel);
+        });
+      });
+    });
+
+    const navLinks = [...document.querySelectorAll('.chapter-nav a')];
+    const sections = [...document.querySelectorAll('.chapter')];
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
+    }, { rootMargin: '-24% 0px -62% 0px', threshold: [0.05, 0.2, 0.45] });
+    sections.forEach((section) => observer.observe(section));
+
+    function updateReadProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      document.getElementById('readProgress').style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+    }
+    window.addEventListener('scroll', updateReadProgress, { passive: true });
+    window.addEventListener('resize', updateReadProgress);
+    updateReadProgress();
+  </script>
+</body>
+</html>
